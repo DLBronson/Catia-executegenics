@@ -26,7 +26,9 @@ The engine is built by a company called blueprint engines and when I bought the 
 
 
 
+Yes and no.
 
+The system is armed by flipping a toggle switch. Then when you go to wide open throttle the nitrous starts spraying. If only sprays at wide open throttle and for about 20 seconds
 
 
 
