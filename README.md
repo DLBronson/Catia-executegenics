@@ -13,3 +13,5 @@ It does have one thing going for it. It's dislike is even across the board. Ther
 How about the fact that up here we call that ugly looking nutating head, the Tupac head.
 
 You and I both work for a company that has a Tupac head
+
+I'm starting to think that there might be something wrong with me because every time I see that new tating head I cringe. It's like looking at an unmade bed I just don't like those new tating heads they're weird and I just don't get it like why they're even made
