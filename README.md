@@ -710,3 +710,177 @@ INPUT: M00
   End of Block Processing
     MACRO: UpdateVariableBlockProcessing "3001;#3001 + (#CGT_REAL_TIME * 1000);Milliseconds" 0
     MACRO: UpdateVariableBlockProcessing "3002;#3002 + (#CGT_REAL_TIME / 3600);Hours" 0
+INPUT: (CHECK CLEARANCE)
+  File: 001 TOP RIGHT.eia, Sub: 1254, Line: 27
+  Start of Block Processing
+    MACRO: UpdateVariableBlockProcessing "104120;0" 0
+  ACTIVE:Active Subsystem = "1", Active Stock = "Stock", Active Tool = "Tool"
+  End of Block Processing
+    MACRO: UpdateVariableBlockProcessing "3001;#3001 + (#CGT_REAL_TIME * 1000);Milliseconds" 0
+    MACRO: UpdateVariableBlockProcessing "3002;#3002 + (#CGT_REAL_TIME / 3600);Hours" 0
+INPUT: G69
+  File: 001 TOP RIGHT.eia, Sub: 1254, Line: 28
+  Start of Block Processing
+    MACRO: UpdateVariableBlockProcessing "104120;0" 0
+    Variable Referenced: 4008 = 43
+  WORD: G 69 (Variable: 4008 43) 
+    VARIABLE: 4016 = 69
+    VARIABLE: 4216 = 69
+    MACRO: RotateCancel "69" 69
+    MACRO: RotationPlaneCancelReset "69" 69
+    MACRO: ToolOffsetUpdate "69" 69
+  OFFSETS: Gage Offset attributes:
+  OFFSETS:   1. OFF: A Driven Point ID of zero is processed like any other ID
+  OFFSETS:   2. OFF: The Driven Point ID is not required to match the active Tool ID
+  OFFSETS:   3. ON:  Ignore the Driven Point ID and use the tool's first driven point if it exists
+  OFFSETS:   4. OFF: Use the tool's Gage Point offset if the tool has no Driven Point IDs
+  OFFSETS:   5. OFF: Use the tool's Gage Point offset if the tool has Driven Point IDs but none match
+  OFFSETS:   6. OFF: No error message if the tool has no Driven Point IDs
+  OFFSETS:   7. OFF: No error message if the tool has Driven Point IDs but none match
+  OFFSETS:   8. OFF: No warning message if the tool has no Driven Point IDs
+  OFFSETS:   9. OFF: No warning message if the tool has Driven Point IDs but none match
+  OFFSETS:  10. OFF: Do not fall back to the tool's first driven point if the specified Driven Point ID is not found
+  OFFSETS:  11. OFF: The Driven Point ID is not required to match the active tool number
+  OFFSETS:Updating Tool Offsets: Apply Gage Offsets = 1, Apply Gage Pivot Offset = 1, RTCP Uses = Gage Pivot Offset, AdjustToolOffset = 2, Dynamic Tool Tip = 0
+  OFFSETS:Gage Pivot Offset:  FROM: Intersection of A and B, TO: Tool 
+  OFFSETS:Gage Offset = (0, 0 7.876)
+    MACRO: DynamicWorkOffsets "69" 0
+    MACRO: UpdateRotaryOffsets "69" 69
+  ACTIVE:Active Subsystem = "1", Active Stock = "Stock", Active Tool = "Tool"
+  End of Block Processing
+    MACRO: UpdateVariableBlockProcessing "3001;#3001 + (#CGT_REAL_TIME * 1000);Milliseconds" 0
+    MACRO: UpdateVariableBlockProcessing "3002;#3002 + (#CGT_REAL_TIME / 3600);Hours" 0
+INPUT: M00
+  File: 001 TOP RIGHT.eia, Sub: 1254, Line: 29
+  Start of Block Processing
+    MACRO: UpdateVariableBlockProcessing "104120;0" 0
+  ACTIVE:Active Subsystem = "1", Active Stock = "Stock", Active Tool = "Tool"
+  Start of After Motion macros.
+  WORD: M 0 * * 
+    MACRO: StopProgram "00" 0
+  End of Block Processing
+    MACRO: UpdateVariableBlockProcessing "3001;#3001 + (#CGT_REAL_TIME * 1000);Milliseconds" 0
+    MACRO: UpdateVariableBlockProcessing "3002;#3002 + (#CGT_REAL_TIME / 3600);Hours" 0
+INPUT:  
+  File: 001 TOP RIGHT.eia, Sub: 1254, Line: 30
+INPUT: (FACE 2 - B90 C90)
+  File: 001 TOP RIGHT.eia, Sub: 1254, Line: 31
+  Start of Block Processing
+    MACRO: UpdateVariableBlockProcessing "104120;0" 0
+  ACTIVE:Active Subsystem = "1", Active Stock = "Stock", Active Tool = "Tool"
+  End of Block Processing
+    MACRO: UpdateVariableBlockProcessing "3001;#3001 + (#CGT_REAL_TIME * 1000);Milliseconds" 0
+    MACRO: UpdateVariableBlockProcessing "3002;#3002 + (#CGT_REAL_TIME / 3600);Hours" 0
+INPUT: M108 M212
+  File: 001 TOP RIGHT.eia, Sub: 1254, Line: 32
+  Start of Block Processing
+    MACRO: UpdateVariableBlockProcessing "104120;0" 0
+  WORD: M 108 * * 
+    MACRO: IgnoreMacro "108" 108
+  WORD: M 212 * * 
+    MACRO: IgnoreMacro "212" 212
+  ACTIVE:Active Subsystem = "1", Active Stock = "Stock", Active Tool = "Tool"
+  End of Block Processing
+    MACRO: UpdateVariableBlockProcessing "3001;#3001 + (#CGT_REAL_TIME * 1000);Milliseconds" 0
+    MACRO: UpdateVariableBlockProcessing "3002;#3002 + (#CGT_REAL_TIME / 3600);Hours" 0
+INPUT: G00 B90. C90.
+  File: 001 TOP RIGHT.eia, Sub: 1254, Line: 33
+  Start of Block Processing
+    MACRO: UpdateVariableBlockProcessing "104120;0" 0
+  WORD: G 0 * * 
+    VARIABLE: 4001 = 0
+    VARIABLE: 4201 = 0
+    MACRO: MotionRapid "00" 0
+  WORD: B 90 * * 
+    VARIABLE: 4102 = 90
+    VARIABLE: 4302 = 90
+    MACRO: BAxisMotion "90." 90
+  WORD: C 90 * * 
+    MACRO: CAxisMotion "90." 90
+  ACTIVE:Active Subsystem = "1", Active Stock = "Stock", Active Tool = "Tool"
+  End of Block Processing
+    MACRO: UpdateVariableBlockProcessing "3001;#3001 + (#CGT_REAL_TIME * 1000);Milliseconds" 0
+    MACRO: UpdateVariableBlockProcessing "3002;#3002 + (#CGT_REAL_TIME / 3600);Hours" 0
+INPUT: M107 M210
+  File: 001 TOP RIGHT.eia, Sub: 1254, Line: 34
+  Start of Block Processing
+    MACRO: UpdateVariableBlockProcessing "104120;0" 0
+  WORD: M 107 * * 
+    MACRO: IgnoreMacro "107" 107
+  WORD: M 210 * * 
+    MACRO: IgnoreMacro "210" 210
+  ACTIVE:Active Subsystem = "1", Active Stock = "Stock", Active Tool = "Tool"
+  End of Block Processing
+    MACRO: UpdateVariableBlockProcessing "3001;#3001 + (#CGT_REAL_TIME * 1000);Milliseconds" 0
+    MACRO: UpdateVariableBlockProcessing "3002;#3002 + (#CGT_REAL_TIME / 3600);Hours" 0
+INPUT: G68.2 X0. Y0. Z0. I180. J90. K0.
+  File: 001 TOP RIGHT.eia, Sub: 1254, Line: 35
+  Start of Block Processing
+    MACRO: UpdateVariableBlockProcessing "104120;0" 0
+  WORD: X 0 (G 68.2) 
+    MACRO: RotationPlaneXPoint "0." 0
+  WORD: Y 0 (G 68.2) 
+    MACRO: RotationPlaneYPoint "0." 0
+  WORD: Z 0 (G 68.2) 
+    MACRO: RotationPlaneZPoint "0." 0
+  WORD: I 180 (G 68.2) 
+    MACRO: RotationPlaneAngle3 "Z" 180
+  WORD: J 90 (G 68.2) 
+    MACRO: RotationPlaneAngle2 "X" 90
+  WORD: K 0 (G 68.2) 
+    MACRO: RotationPlaneAngle1 "Z" 0
+  WORD: G 68.2 * * 
+    VARIABLE: 4016 = 68.2
+    VARIABLE: 4216 = 68.2
+    MACRO: RotationPlane2 "68.2" 68.2
+    MACRO: DynamicWorkOffsets "68.2" 1
+    MACRO: DynamicWorkOffsetsContour "68.2" 0
+    MACRO: DynamicWorkOffsetsWithMotion "68.2" 1
+    MACRO: UpdateRotaryOffsets "68.2" 68.2
+  OFFSETS:Updating Work/Shift Offsets
+  ACTIVE:Active Subsystem = "1", Active Stock = "Stock", Active Tool = "Tool"
+  End of Block Processing
+    MACRO: UpdateVariableBlockProcessing "3001;#3001 + (#CGT_REAL_TIME * 1000);Milliseconds" 0
+    MACRO: UpdateVariableBlockProcessing "3002;#3002 + (#CGT_REAL_TIME / 3600);Hours" 0
+INPUT: G00 G90 X-.5 Y-.5
+  File: 001 TOP RIGHT.eia, Sub: 1254, Line: 36
+  Start of Block Processing
+    MACRO: UpdateVariableBlockProcessing "104120;0" 0
+  WORD: G 0 * * 
+    VARIABLE: 4001 = 0
+    VARIABLE: 4201 = 0
+    MACRO: MotionRapid "00" 0
+  WORD: G 90 * * 
+    VARIABLE: 4003 = 90
+    VARIABLE: 4203 = 90
+    MACRO: ModeAbsolute "90" 90
+  WORD: X -0.5 * * 
+    MACRO: XAxisMotion "-.5" -0.5
+  WORD: Y -0.5 * * 
+    MACRO: YAxisMotion "-.5" -0.5
+  ACTIVE:Active Subsystem = "1", Active Stock = "Stock", Active Tool = "Tool"
+  End of Block Processing
+    MACRO: UpdateVariableBlockProcessing "3001;#3001 + (#CGT_REAL_TIME * 1000);Milliseconds" 0
+    MACRO: UpdateVariableBlockProcessing "3002;#3002 + (#CGT_REAL_TIME / 3600);Hours" 0
+INPUT: G43 Z1.5
+  File: 001 TOP RIGHT.eia, Sub: 1254, Line: 37
+  Start of Block Processing
+    MACRO: UpdateVariableBlockProcessing "104120;0" 0
+  WORD: Z 1.5 * * 
+    MACRO: ZAxisMotion "1.5" 1.5
+  WORD: G 43 * * 
+    VARIABLE: 4008 = 43
+    VARIABLE: 4208 = 43
+    MACRO: AdjustToolOffset "43" 2
+    MACRO: TurnOnOffGagePivotOffset "43" 1
+  OFFSETS:Updating Tool Offsets: Apply Gage Offsets = 1, Apply Gage Pivot Offset = 1, RTCP Uses = Gage Pivot Offset, AdjustToolOffset = 2, Dynamic Tool Tip = 0
+  OFFSETS:Gage Pivot Offset:  FROM: Intersection of A and B, TO: Tool 
+    MACRO: TurnOnOffGageOffset "43" 1
+  OFFSETS:Updating Tool Offsets: Apply Gage Offsets = 1, Apply Gage Pivot Offset = 1, RTCP Uses = Gage Pivot Offset, AdjustToolOffset = 2, Dynamic Tool Tip = 0
+  OFFSETS:Gage Pivot Offset:  FROM: Intersection of A and B, TO: Tool 
+  OFFSETS:Gage Offset = (0, 0 7.876)
+    MACRO: SetDynamicVars "AxisLocalPlus 0100000 5041 5042 5043 5049 5044 5045 5047 5048 5046" 43
+  ACTIVE:Active Subsystem = "1", Active Stock = "Stock", Active Tool = "Tool"
+  End of Block Processing
+    MACRO: UpdateVariableBlockProcessing "3001;#3001 + (#CGT_REAL_TIME * 1000);Milliseconds" 0
+    MACRO: UpdateVariableBlockProcessing "3002;#3002 + (#CGT_REAL_TIME / 3600);Hours" 0
