@@ -1,1 +1,4021 @@
 
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="/_content/MastercamUI/lib/bootstrap/css/bootstrap.min.css?v=WWqRjl1McctzGyNBLVsUXkKcIgOiPpv3upDv8-KRu7g&amp;v=WWqRjl1McctzGyNBLVsUXkKcIgOiPpv3upDv8-KRu7g">
+    <link rel="stylesheet" href="/css/bundle.css?v=yaeTwHaCoPA7hkhqN98ZlSjAc7c">
+    <link rel="stylesheet" href="/_content/MastercamUI/lib/font-awesome/css/fontawesome.min.css?v=8XrVbfyn-XSJ-q6CHzaj4lHIJOwdjM5QyMxYq1jsKNg">
+<link rel="stylesheet" href="/_content/MastercamUI/lib/font-awesome/css/solid.min.css?v=CA2vof6DGRCFDZyPzksuPU4SiAok37d9czIqhmVaCdM">
+<link rel="stylesheet" href="/_content/MastercamUI/lib/font-awesome/css/brands.min.css?v=ofjkhyMHonUn_mVnBKFuskI2lW-gQKOTZ65br1Zg4Pg">
+
+<link rel="stylesheet" href="/css/site.css">
+    
+    <link href="/lib/select2/css/select2.min.css" rel="stylesheet">
+    <link href="/lib/select2-bootstrap-5-theme/select2-bootstrap-5-theme.min.css" rel="stylesheet">
+
+</head>
+<body>
+
+    <header>
+
+    <div class="utility-nav">
+        <div class="inner">
+            
+<a href="https://www.mastercam.com">← Mastercam.com</a>
+<span>|</span>
+<span>John.Bettencourt@mastercam.com</span>
+<span>|</span>
+<a href="https://users.mastercam.com/identity/account/manage">Account</a>
+<span>|</span>
+<a rel="nofollow" title="Logout" href="/Account/Logoff">Logout</a>
+
+        </div>
+    </div>
+
+    <div class="inner">
+
+        <nav class="navbar navbar-dark primary-nav">
+
+
+            <div class="container-fluid">
+
+                <div class="navbar-brand"><img src="/_content/MastercamUI/images/brand_banner.png" alt="Mastercam.com" style="border-width:0px;"></div>
+
+                <nav class="menu-nav">
+                    <ul>
+                        
+<li>
+    <a href="/">
+        <i class="fa fa-home"></i>
+        Home
+    </a>
+</li>
+
+<li>
+    <a href="mailto:applications@mastercam.com">
+        <i class="fa fa-flag"></i>
+        Need Help?
+    </a>
+</li>
+
+
+
+
+
+                    </ul>
+                </nav>
+
+            </div>
+
+        </nav>
+
+    </div>
+
+</header>
+
+    <div class="justify-content-center wrapper">
+        <div class="container">
+            <main role="main" class="pb-3">
+                
+
+
+<div class="row mb-3">
+    <div>
+        <form id="searchForm">
+            <fieldset>
+
+                <div class="row mb-3">
+                    <div class="col-md-12">
+                        <div class="input-group input-group-sm">
+                            <span class="input-group-text" for="keywordInput">Keyword:</span>
+                            <input class="form-control" type="text" id="keywordInput" placeholder="Keyword or phrase" data-val="true" data-val-required="The Keywords field is required." name="Current.Keywords" value="mori">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+
+                    <div class="col-md-6">
+                        <div class="input-group input-group-sm">
+                            <span class="input-group-text" for="partTypePicker">Part Type:</span>
+                            <select class="form-control" id="partTypePicker"><option value="1">Sample File</option>
+<option value="2">Tool Library</option>
+<option selected="selected" value="3">Post</option>
+<option value="4">Add-in</option>
+<option value="5">Mill Turn Environment</option>
+<option value="6">Component Library</option>
+<option value="7">Setup Sheet</option>
+</select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="input-group input-group-sm">
+                            <span class="input-group-text" for="industryPicker">Industry:</span>
+                            <select class="form-control" id="industryPicker"><option selected="selected" value="-1">Any</option>
+<option value="9">Aerospace &amp; Defense</option>
+<option value="10">Automotive &amp; Transportation</option>
+<option value="11">Boats/Marine</option>
+<option value="220">Consumer Goods</option>
+<option value="26">Design Collaboration</option>
+<option value="13">Education/Training</option>
+<option value="12">Electronics/Communications/Semiconductor</option>
+<option value="20">Energy</option>
+<option value="14">Furniture</option>
+<option value="16">Government or Military</option>
+<option value="71">Jewelry</option>
+<option value="213">Job Shop</option>
+<option value="72">Machine Building</option>
+<option value="15">Medical</option>
+<option value="209">Mining</option>
+<option value="18">Motorcycles</option>
+<option value="19">Music</option>
+<option value="21">Other/Conglomerates</option>
+<option value="73">Packaging</option>
+<option value="22">Prototyping</option>
+<option value="23">Racing</option>
+<option value="24">Recreation/Sports</option>
+<option value="70">Research</option>
+<option value="201">Robotics Machining &amp; Applications</option>
+<option value="74">Signmaking</option>
+<option value="28">Stairs</option>
+<option value="17">Tool, Die, &amp; Mold</option>
+<option value="29">Unknown</option>
+<option value="27">Woodworking</option>
+</select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <div class="input-group input-group-sm">
+                            <span class="input-group-text" for="productPicker">Product:</span>
+                            <select class="form-control" id="productPicker"><option value="-1">Any</option>
+<option value="13">APlus</option>
+<option value="1">Art</option>
+<option value="2">Blade Expert</option>
+<option value="3">Design</option>
+<option value="4">Lathe</option>
+<option value="5">Mastercam for SOLIDWORKS</option>
+<option selected="selected" value="6">Mill</option>
+<option value="7">Mill-Turn</option>
+<option value="8">Multiaxis</option>
+<option value="9">Port Expert</option>
+<option value="14">Probing</option>
+<option value="10">Router</option>
+<option value="11">Swiss</option>
+<option value="12">Wire</option>
+</select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="input-group input-group-sm">
+                            <span class="input-group-text" for="versionPicker">Version:</span>
+                            <select class="form-control" id="versionPicker"><option selected="selected" value="-1">Any</option>
+<option value="14">2027</option>
+<option value="13">2026</option>
+<option value="12">2025</option>
+<option value="11">2024</option>
+<option value="10">2023</option>
+<option value="9">2022</option>
+<option value="8">2021</option>
+<option value="5">2020</option>
+<option value="4">2019</option>
+<option value="3">2018</option>
+<option value="2">2017</option>
+<option value="1">X9</option>
+</select>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="input-group input-group-sm">
+                            <span class="input-group-text" for="unitPicker">Units:</span>
+                            <select class="form-control" id="unitPicker"><option selected="selected" value="-1">Any</option>
+<option value="0">Imperial</option>
+<option value="1">Metric</option>
+</select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="input-group input-group-sm">
+                        <div class="input-group-text" for="tagsPicker">Tags:</div>
+                        <select class="form-select select2-hidden-accessible" id="tagPicker" multiple="" data-placeholder="Select tags..." data-select2-id="tagPicker" tabindex="-1" aria-hidden="true"><option value="12">2D Chamfer</option>
+<option value="11">2D Contour</option>
+<option value="8">2D Dynamic Mill</option>
+<option value="37">2D Dynamic Peel Mill</option>
+<option value="49">3+2 Finishing</option>
+<option value="165">3+2 Programming</option>
+<option value="272">3D HST</option>
+<option value="241">3D PDF</option>
+<option value="74">3D Tooling</option>
+<option value="29">4-Axis EDM</option>
+<option value="139">5-Axis Drilling</option>
+<option value="337">5th Axis Workholding</option>
+<option value="64">Accelerated Finishing</option>
+<option value="222">Accuracy</option>
+<option value="151">Add History</option>
+<option value="237">Advanced Drill</option>
+<option value="142">Advanced Toolpath Display</option>
+<option value="243">Align To Z</option>
+<option value="320">Anisotropic</option>
+<option value="263">Approximate Mode</option>
+<option value="143">Arc Filter</option>
+<option value="382">Area Mill</option>
+<option value="159">Associativity</option>
+<option value="236">Automatic 3+2</option>
+<option value="242">Automatic Bounding Box</option>
+<option value="301">Automatic Cut Pattern</option>
+<option value="249">Automatic Raster Angle</option>
+<option value="51">Axis Substitution</option>
+<option value="145">Backplot</option>
+<option value="330">Barrel Mill</option>
+<option value="276">Barrel Tool</option>
+<option value="384">B-Axis Turning</option>
+<option value="365">blade</option>
+<option value="366">blisk</option>
+<option value="69">BMT40</option>
+<option value="107">BMT55</option>
+<option value="72">BMT60</option>
+<option value="80">BMT65</option>
+<option value="367">Boneplate</option>
+<option value="161">Boolean</option>
+<option value="370">Border Style</option>
+<option value="141">Bounding Box</option>
+<option value="317">Brush Selection</option>
+<option value="327">C#</option>
+<option value="125">C4</option>
+<option value="123">C5</option>
+<option value="122">C6</option>
+<option value="121">C8</option>
+<option value="265">CAD</option>
+<option value="235">Categories</option>
+<option value="27">C-Axis Contour</option>
+<option value="28">C-Axis Face Drill</option>
+<option value="41">C-Axis Lathe</option>
+<option value="117">Center</option>
+<option value="208">Center of Rotation</option>
+<option value="136">Chaining</option>
+<option value="238">Chamfer Drill</option>
+<option value="240">Check Tool Reach</option>
+<option value="285">Chuck Jaws</option>
+<option value="252">Chucks</option>
+<option value="288">Circle Segment</option>
+<option value="175">Clean Core</option>
+<option value="201">Code Expert</option>
+<option value="257">Collet</option>
+<option value="259">Collet chuck</option>
+<option value="170">Collision Control</option>
+<option value="275">Compare</option>
+<option value="283">Component Creation</option>
+<option value="284">Component Usage</option>
+<option value="61">Configuration</option>
+<option value="160">Contextual Tabs</option>
+<option value="369">Control Creation</option>
+<option value="247">Corner Pre-Treat</option>
+<option value="75">CoroTurn</option>
+<option value="62">Corporate</option>
+<option value="217">Current Commands</option>
+<option value="339">CurrentCulture</option>
+<option value="31">Curve 5-Axis</option>
+<option value="15">Custom WCS</option>
+<option value="45">Custom Workholding</option>
+<option value="293">Cut From Containment</option>
+<option value="292">Cut Pattern</option>
+<option value="198">Cycle Time</option>
+<option value="340">DateTime</option>
+<option value="313">Decimate</option>
+<option value="43">Design Table</option>
+<option value="306">Display Tool</option>
+<option value="270">Divide</option>
+<option value="67">DMG</option>
+<option value="363">DN Solutions</option>
+<option value="246">Dogleg Rapids</option>
+<option value="79">Doosan</option>
+<option value="397">Dormer Pramet</option>
+<option value="99">Drafting</option>
+<option value="268">Drag</option>
+<option value="146">Drilling</option>
+<option value="163">Dynamic Gnomon</option>
+<option value="3">Dynamic OptiRough</option>
+<option value="229">Dynamic Start Point</option>
+<option value="24">Dynamic Turning</option>
+<option value="204">Dynamic Work Offset</option>
+<option value="278">Edit Surface</option>
+<option value="104">Educational</option>
+<option value="211">Efficiency</option>
+<option value="1">EMUGE Circle Segment</option>
+<option value="361">EMUGE FRANKEN</option>
+<option value="202">Endpoints</option>
+<option value="250">Engraving</option>
+<option value="70">Eppinger</option>
+<option value="97">Equal Scallop</option>
+<option value="264">Exact Mode</option>
+<option value="71">EXSYS</option>
+<option value="225">Extend Edge Curve</option>
+<option value="371">External File</option>
+<option value="248">Facing Roll-In</option>
+<option value="42">Family of Parts</option>
+<option value="299">Fill Holes</option>
+<option value="207">Fixture</option>
+<option value="30">Flow 5-Axis</option>
+<option value="147">Fully Programmed</option>
+<option value="193">G187</option>
+<option value="214">G234</option>
+<option value="205">G254</option>
+<option value="398">Garr</option>
+<option value="129">Genos</option>
+<option value="298">Geodesic</option>
+<option value="267">Geometry Creation</option>
+<option value="33">Globe</option>
+<option value="261">Glow Highlighting</option>
+<option value="53">GMD</option>
+<option value="348">Golf</option>
+<option value="355">Graphite</option>
+<option value="383">Grob</option>
+<option value="302">Guide Curve Cut Pattern</option>
+<option value="178">Haas</option>
+<option value="38">Haas Mini-Mill</option>
+<option value="44">Haas ST-20</option>
+<option value="57">Half Index</option>
+<option value="109">Harvey Performance Company</option>
+<option value="108">Harvey Tool</option>
+<option value="336">Heidenhain</option>
+<option value="92">Heimatec</option>
+<option value="112">Helical Solutions</option>
+<option value="22">Helix Bore</option>
+<option value="334">Hermle</option>
+<option value="199">High Speed Machining</option>
+<option value="85">Holder</option>
+<option value="157">Holder Checking</option>
+<option value="120">HSK-A63</option>
+<option value="166">HST Blend</option>
+<option value="360">Hurco</option>
+<option value="5">Hurco VMX30i</option>
+<option value="82">Hyper Quadrex</option>
+<option value="325">Image</option>
+<option value="132">IMCO</option>
+<option value="385">IMTS 2024</option>
+<option value="114">ISCAR</option>
+<option value="13">Iscar HEM (High Efficiency Machining)</option>
+<option value="319">Isotropic</option>
+<option value="253">Jaws</option>
+<option value="388">Kennametal</option>
+<option value="379">Kitagawa</option>
+<option value="130">L300</option>
+<option value="374">Label</option>
+<option value="191">Lang Workholding</option>
+<option value="187">Laser Scanner</option>
+<option value="351">Lathe</option>
+<option value="152">Lathe Simulation</option>
+<option value="126">LB2000</option>
+<option value="127">LB2500</option>
+<option value="128">LB3000</option>
+<option value="221">Lights Out</option>
+<option value="308">Line Normal To Point</option>
+<option value="203">Linearized</option>
+<option value="303">Lines Tool Axis Control</option>
+<option value="286">Linking</option>
+<option value="118">Live</option>
+<option value="296">Lollipop Mill</option>
+<option value="375">M.A. Ford</option>
+<option value="177">M130</option>
+<option value="376">MA Ford</option>
+<option value="174">Machine Simulation</option>
+<option value="218">Macro</option>
+<option value="219">Macro Variable</option>
+<option value="192">Master3DGage</option>
+<option value="46">Mastercam Brochure Parts</option>
+<option value="155">Mastercam For SOLIDWORKS</option>
+<option value="81">Mazak</option>
+<option value="354">MC Machinery</option>
+<option value="154">MCFSW</option>
+<option value="368">Medical</option>
+<option value="162">Merge Pattern</option>
+<option value="333">Mesh Tools</option>
+<option value="359">Methods</option>
+<option value="346">Micro Machining</option>
+<option value="380">Mikron</option>
+<option value="381">Mikron Tool</option>
+<option value="329">mill</option>
+<option value="58">Mill-Turn</option>
+<option value="195">Misc Values</option>
+<option value="101">Model Chamfer</option>
+<option value="148">Model Prep</option>
+<option value="171">Modify Fillet</option>
+<option value="304">Modify Vector</option>
+<option value="344">Mold</option>
+<option value="186">Mold Repair</option>
+<option value="68">Mori Seiki</option>
+<option value="124">Morph Toolpath</option>
+<option value="345">Mould</option>
+<option value="98">MT Lathe</option>
+<option value="56">Multi Station</option>
+<option value="158">Multiaxis</option>
+<option value="48">Multiaxis Collision Control - Automatic Tilt</option>
+<option value="47">Multiaxis Cuts Along Curve</option>
+<option value="100">Multiaxis Deburr</option>
+<option value="138">Multiaxis Drilling</option>
+<option value="35">Multiaxis Linking</option>
+<option value="4">Multiaxis Parallel</option>
+<option value="10">Multiaxis Parallel to Surfaces</option>
+<option value="289">Multiaxis Pocketing</option>
+<option value="63">Multiaxis Roughing</option>
+<option value="6">Multiaxis Swarf (Old)</option>
+<option value="7">Multiaxis Swarf Milling</option>
+<option value="181">Multimedia Display</option>
+<option value="134">Multiple Air Regions</option>
+<option value="36">Multiple Machine Groups</option>
+<option value="102">Multiple Plunge Groove</option>
+<option value="60">Multiple Stock to Leave</option>
+<option value="14">Multiple Work Offsets</option>
+<option value="87">Multus U</option>
+<option value="94">MX</option>
+<option value="89">Nakamura-Tome</option>
+<option value="200">NC Code</option>
+<option value="179">Next Gen Control</option>
+<option value="357">Nike of Samothrace</option>
+<option value="116">NSK</option>
+<option value="190">Offsets</option>
+<option value="88">Okuma</option>
+<option value="395">Onsrud</option>
+<option value="230">Open Pocket</option>
+<option value="312">Optimize Cut Pattern</option>
+<option value="394">OSG</option>
+<option value="335">OSG Tools</option>
+<option value="260">Outer Open Edges</option>
+<option value="231">Outer Shared Edges</option>
+<option value="209">Oval Form</option>
+<option value="39">Part Flip</option>
+<option value="352">Partner</option>
+<option value="378">PCT</option>
+<option value="164">Plane Gnomon Display</option>
+<option value="206">Plane Manager</option>
+<option value="168">Port Expert</option>
+<option value="169">Port Expert Roughing</option>
+<option value="297">Porting</option>
+<option value="196">Post Processor</option>
+<option value="77">Power Surface</option>
+<option value="223">Precision</option>
+<option value="377">Precision Cutting Tools</option>
+<option value="76">Prime</option>
+<option value="103">Prime Turning</option>
+<option value="189">Probe</option>
+<option value="20">Probing</option>
+<option value="390">Process Hole</option>
+<option value="21">Productivity Plus</option>
+<option value="93">Puma</option>
+<option value="150">Push/Pull</option>
+<option value="213">Quality</option>
+<option value="258">Quick-Grip</option>
+<option value="245">Rapid Retract Fillets</option>
+<option value="32">Raptor Workholding</option>
+<option value="16">Raster</option>
+<option value="318">Refine</option>
+<option value="279">Reflow Surface</option>
+<option value="135">Region Chaining</option>
+<option value="315">Remove Facets</option>
+<option value="220">Renishaw</option>
+<option value="314">Repair Mesh</option>
+<option value="273">Rest Material</option>
+<option value="137">Rest Roughing</option>
+<option value="280">Retrim Surface</option>
+<option value="188">Reverse Engineering</option>
+<option value="26">Router Part</option>
+<option value="256">Royal</option>
+<option value="140">Safety Zone</option>
+<option value="321">Sandvik</option>
+<option value="347">Sandvik Coromant</option>
+<option value="18">Scallop</option>
+<option value="324">Script</option>
+<option value="372">Script Code</option>
+<option value="332">Seco Mills</option>
+<option value="364">seco tools</option>
+<option value="307">Set Display Tool</option>
+<option value="180">Setup Sheet</option>
+<option value="232">Show All Selection Arrows</option>
+<option value="305">Show Tool</option>
+<option value="133">Signature Parts</option>
+<option value="311">Silhouette Boundary</option>
+<option value="215">Simultaneous</option>
+<option value="244">Skip All Pockets</option>
+<option value="391">SMW Autoblock</option>
+<option value="343">Sodick</option>
+<option value="227">Solid Chaining</option>
+<option value="255">Solid Chuck</option>
+<option value="331">Solid End Mills</option>
+<option value="233">Solid Hole</option>
+<option value="144">Solid Selection</option>
+<option value="282">Solid Workholding Component</option>
+<option value="40">SOLIDWORKS</option>
+<option value="115">Spindle Locators</option>
+<option value="309">Spiral</option>
+<option value="25">Spiral Toolpath</option>
+<option value="149">Split Solid Face</option>
+<option value="251">Spring Passes</option>
+<option value="353">Stainless Steel</option>
+<option value="356">Statue</option>
+<option value="262">Stipple Shading</option>
+<option value="96">STL Machining</option>
+<option value="277">Stock</option>
+<option value="153">Stock Flip in MT</option>
+<option value="9">Stock Model</option>
+<option value="172">Stock Model Display</option>
+<option value="210">Surface Finish</option>
+<option value="50">Surface Finish Blend</option>
+<option value="19">Surfaces</option>
+<option value="349">Swiss</option>
+<option value="119">Tailstock</option>
+<option value="2">Technical Spec Sheet</option>
+<option value="182">Technology</option>
+<option value="234">Templates</option>
+<option value="373">Text Box</option>
+<option value="295">Text Projection</option>
+<option value="156">Thread Milling</option>
+<option value="59">Tilt To Avoid Gouge</option>
+<option value="212">Time Saving</option>
+<option value="341">TimeSpan</option>
+<option value="183">Tips and Tricks</option>
+<option value="393">TNC7</option>
+<option value="194">Tolerance</option>
+<option value="173">Tool Axis Control</option>
+<option value="55">Tool Block</option>
+<option value="54">Tool Holders</option>
+<option value="66">Tool Locators</option>
+<option value="176">Tool Projection</option>
+<option value="23">Toolpath Transform</option>
+<option value="294">Traditional Finishing</option>
+<option value="78">Training</option>
+<option value="287">Transition</option>
+<option value="310">Transitions</option>
+<option value="269">Trim</option>
+<option value="300">Trim Small Cuts</option>
+<option value="271">Trim Toolpath</option>
+<option value="226">Trim/Extend</option>
+<option value="350">Tsugami</option>
+<option value="95">TT</option>
+<option value="84">Turret</option>
+<option value="197">UMC-750</option>
+<option value="291">Unified</option>
+<option value="326">UserData</option>
+<option value="338">UXD</option>
+<option value="362">Valor Holemaking</option>
+<option value="131">Variable Pitch</option>
+<option value="328">VB</option>
+<option value="73">VDI50</option>
+<option value="86">Velocity</option>
+<option value="392">Vericut</option>
+<option value="274">Verify</option>
+<option value="167">Verify Compare</option>
+<option value="184">Verisurf</option>
+<option value="34">Vise Workholding</option>
+<option value="290">Wall Finishing</option>
+<option value="17">Waterline</option>
+<option value="224">Wear Offset</option>
+<option value="185">Weld</option>
+<option value="387">WIDIA</option>
+<option value="266">Wireframe</option>
+<option value="228">Wireframe Chaining</option>
+<option value="216">Work Offset</option>
+<option value="254">Workholding</option>
+<option value="281">Wrap</option>
+<option value="316">Wrap Around</option>
+<option value="239">Wrap Linking</option>
+<option value="90">WT</option>
+<option value="83">WTO</option>
+<option value="91">WY</option>
+<option value="358">Yasda</option>
+</select><span class="select2 select2-container select2-container--bootstrap-5" dir="ltr" data-select2-id="1"><span class="selection"><span class="select2-selection select2-selection--multiple" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1" aria-disabled="false"><ul class="select2-selection__rendered"><li class="select2-search select2-search--inline"><input class="select2-search__field" type="search" tabindex="0" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" role="searchbox" aria-autocomplete="list" placeholder="Select tags..." style="width: 592.889px;"></li></ul></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <div class="input-group input-group-sm">
+                            <span class="input-group-text" for="pageSizePicker">Page Size:</span>
+                            <select class="form-control" id="pageSizePicker"><option value="5">5</option>
+<option value="10">10</option>
+<option value="25">25</option>
+<option selected="selected" value="50">50</option>
+</select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group input-group-sm">
+                            <span class="input-group-text" for="sortPicker">Sort By:</span>
+                            <select class="form-control" id="sortPicker"><option selected="selected" value="1">Newest</option>
+<option value="2">Most Downloaded</option>
+<option value="3">Recently Updated</option>
+<option value="4">Most Views</option>
+</select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row d-none">
+
+                    <div class="form-group col-sm-12">
+                        <div class="checkbox" ng-show="searchParams.selectedPartType.value == '3'">
+                            <label>
+                                <input type="checkbox" id="canPurchase" ng-model="searchParams.purchasablePartsOnly"> Purchasable Posts Only?
+                                <span class="form-text">Only show if part type 3 is selected</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3 d-none">
+                    <div class="text-align-center">
+                        Search Limited to <strong>{{searchLimitedTo}}</strong> <a ng-click="clearLimitedTo()"><i class="fa fa-close"></i></a>
+                    </div>
+                    <br>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col">
+                        <button class="btn btn-primary" type="submit">Search</button>
+                        <button class="btn btn-secondary" id="clearSearchButton">Clear</button>
+                    </div>
+                    <div class="col text-center">
+                        28 part files found.
+                    </div>
+
+                    
+<div class="col d-flex justify-content-end">
+    <ul class="pagination">
+        <li class="page-item disabled">
+            <a class="page-link" href="/?keywords=mori&amp;partType=3&amp;product=6&amp;sortBy=1&amp;pageSize=50&amp;currentPage=1"><i class="fas fa-fast-backward"></i></a>
+        </li>
+
+        <li class="page-item disabled">
+            <a class="page-link" href="/?keywords=mori&amp;partType=3&amp;product=6&amp;sortBy=1&amp;pageSize=50&amp;currentPage=0"><i class="fas fa-step-backward"></i></a>
+        </li>
+
+            <li class="page-item active">
+                <a class="page-link" href="/?keywords=mori&amp;partType=3&amp;product=6&amp;sortBy=1&amp;pageSize=50&amp;currentPage=1">1</a>
+            </li>
+
+        <li class="page-item  disabled">
+            <a class="page-link" href="/?keywords=mori&amp;partType=3&amp;product=6&amp;sortBy=1&amp;pageSize=50&amp;currentPage=2"><i class="fas fa-step-forward"></i></a>
+        </li>
+
+        <li class="page-item  disabled">
+            <a class="page-link" href="/?keywords=mori&amp;partType=3&amp;product=6&amp;sortBy=1&amp;pageSize=50&amp;currentPage=1"><i class="fas fa-fast-forward"></i></a>
+        </li>
+    </ul>
+
+</div>
+
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+
+    <div class="card mb-3 ">
+
+        <div class="row g-0">
+
+            <div class="col-md-3">
+                    <img class="img-fluid part-image" src="/images/placeholder.png">
+            </div>
+
+            <div class="col-md-6">
+                <div class="card-body">
+                    <p class="card-text">
+                        <a class="part-link" href="/parts/6366">Mori Seiki NMH6300 MSX 5X HMC Mill.pst</a>
+                    </p>
+                    <p class="card-text">
+                        </p><p>Files included in package:</p>
+<ul>
+<li><p>Mori Seiki NMH6300 MSX 5X HMC Mill.MCAM-CONTROL</p>
+</li>
+<li><p>Mori Seiki NMH6300 MSX 5X HMC Mill.MCAM-MMD</p>
+</li>
+<li><p>Mori Seiki NMH6300 MSX 5X HMC Mill MM.MCAM-MMD</p>
+</li>
+<li><p>Mori Seiki NMH6300 MSX 5X HMC Mill.pst</p>
+</li>
+</ul>
+<p>CNC Post Revision: 29.00</p>
+<p>Machine Name: Mori Seiki NMH6300 DCG</p>
+<p>Control Name: Mori Seiki MSX-711, MSX-711III</p>
+<p>Description: 5 Axis Horizontal Mill</p>
+
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card-body">
+
+                    <div>
+                        <strong>File Type:</strong> Post
+                    </div>
+                    <div>
+
+                        <strong>Versions:</strong>
+                            <span>2027</span>
+
+                    </div>
+                    <div>
+                        <strong>Products:</strong>
+
+                            <span>Mill</span>
+                    </div>
+
+                    
+
+                    
+
+                    <div>
+                        <strong>Downloads: </strong> 18
+                    </div>
+                    <div>
+                        <strong>Views: </strong> 7
+                    </div>
+
+
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+        
+
+            <div class="card-footer">
+                <div class="col-xs-12">
+                    <h5>Files available for download:</h5>
+                </div>
+
+                
+                        <div class="col-sm-6">
+                            <a class="btn btn-primary mb-1" href="/parts/30053/download">
+                                Mori Seiki NMH6300 MSX 5X HMC Mill.mcam-content
+                            </a>
+                        </div>
+
+                
+
+                
+
+
+
+            </div>
+
+        
+
+
+        <div class="card-footer">
+            <div class="col-xs-9">
+                <p class="small">Uploaded by Sam Garofolo. Last modified on 6/30/2026</p>
+            </div>
+            
+
+        </div>
+
+
+    </div>
+    <div class="card mb-3 ">
+
+        <div class="row g-0">
+
+            <div class="col-md-3">
+                    <img class="img-fluid part-image" src="/images/placeholder.png">
+            </div>
+
+            <div class="col-md-6">
+                <div class="card-body">
+                    <p class="card-text">
+                        <a class="part-link" href="/parts/6365">Mori Seiki NVX5000 4X Mill.pst</a>
+                    </p>
+                    <p class="card-text">
+                        </p><p>Files included in package:</p>
+<ul>
+<li><p>Mori Seiki NVX5000 4X Mill.MCAM-CONTROL</p>
+</li>
+<li><p>Mori Seiki NVX5000 4X Mill.MCAM-MMD</p>
+</li>
+<li><p>Mori Seiki NVX5000 4X Mill MM.MCAM-MMD</p>
+</li>
+<li><p>Mori Seiki NVX5000 4X Mill.pst</p>
+</li>
+</ul>
+<p>CNC Post Revision: 29.00</p>
+<p>Machine Name: Mori Seiki NVX5000</p>
+<p>Control Name: MAPPS IV</p>
+<p>Description: Mori Seiki NVX5000 4X Mill Post</p>
+
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card-body">
+
+                    <div>
+                        <strong>File Type:</strong> Post
+                    </div>
+                    <div>
+
+                        <strong>Versions:</strong>
+                            <span>2027</span>
+
+                    </div>
+                    <div>
+                        <strong>Products:</strong>
+
+                            <span>Mill</span>
+                    </div>
+
+                    
+
+                    
+
+                    <div>
+                        <strong>Downloads: </strong> 14
+                    </div>
+                    <div>
+                        <strong>Views: </strong> 5
+                    </div>
+
+
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+        
+
+            <div class="card-footer">
+                <div class="col-xs-12">
+                    <h5>Files available for download:</h5>
+                </div>
+
+                
+                        <div class="col-sm-6">
+                            <a class="btn btn-primary mb-1" href="/parts/30052/download">
+                                MORI SEIKI NVX5000 4X MILL.mcam-content
+                            </a>
+                        </div>
+
+                
+
+                
+
+
+
+            </div>
+
+        
+
+
+        <div class="card-footer">
+            <div class="col-xs-9">
+                <p class="small">Uploaded by Sam Garofolo. Last modified on 6/30/2026</p>
+            </div>
+            
+
+        </div>
+
+
+    </div>
+    <div class="card mb-3 ">
+
+        <div class="row g-0">
+
+            <div class="col-md-3">
+                    <img class="img-fluid part-image" src="/images/placeholder.png">
+            </div>
+
+            <div class="col-md-6">
+                <div class="card-body">
+                    <p class="card-text">
+                        <a class="part-link" href="/parts/6364">Mori_Seiki_NV5000 Fanuc18I 4X Mill.pst</a>
+                    </p>
+                    <p class="card-text">
+                        </p><p>Files included in package:</p>
+<ul>
+<li><p>MORI_SEIKI_NV5000 FANUC18I 4X MILL.MCAM-CONTROL</p>
+</li>
+<li><p>MORI_SEIKI_NV5000 FANUC18I 4X MILL.MCAM-MMD</p>
+</li>
+<li><p>MORI_SEIKI_NV5000 FANUC18I 4X MILL MM.MCAM-MMD</p>
+</li>
+<li><p>Mori_Seiki_NV5000 Fanuc18I 4X Mill.pst</p>
+</li>
+</ul>
+<p>CNC Post Revision: 29.00</p>
+<p>Machine Name: Mori Seiki NV-5000</p>
+<p>Control Name: Fanuc - MSG501 (Fanuc 18i)</p>
+<p>Description: Mori NV-5000 Vertical Mill</p>
+
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card-body">
+
+                    <div>
+                        <strong>File Type:</strong> Post
+                    </div>
+                    <div>
+
+                        <strong>Versions:</strong>
+                            <span>2027</span>
+
+                    </div>
+                    <div>
+                        <strong>Products:</strong>
+
+                            <span>Mill</span>
+                    </div>
+
+                    
+
+                    
+
+                    <div>
+                        <strong>Downloads: </strong> 15
+                    </div>
+                    <div>
+                        <strong>Views: </strong> 5
+                    </div>
+
+
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+        
+
+            <div class="card-footer">
+                <div class="col-xs-12">
+                    <h5>Files available for download:</h5>
+                </div>
+
+                
+                        <div class="col-sm-6">
+                            <a class="btn btn-primary mb-1" href="/parts/30051/download">
+                                Mori_Seiki_NV5000 Fanuc18I 4X Mill.mcam-content
+                            </a>
+                        </div>
+
+                
+
+                
+
+
+
+            </div>
+
+        
+
+
+        <div class="card-footer">
+            <div class="col-xs-9">
+                <p class="small">Uploaded by Sam Garofolo. Last modified on 6/30/2026</p>
+            </div>
+            
+
+        </div>
+
+
+    </div>
+    <div class="card mb-3 ">
+
+        <div class="row g-0">
+
+            <div class="col-md-3">
+                    <img class="img-fluid part-image" src="/images/placeholder.png">
+            </div>
+
+            <div class="col-md-6">
+                <div class="card-body">
+                    <p class="card-text">
+                        <a class="part-link" href="/parts/5758">Mori_Seiki_NV5000 Fanuc18I 4X Mill.pst</a>
+                    </p>
+                    <p class="card-text">
+                        </p><p>Files included in package:</p>
+<ul>
+<li><p>MORI_SEIKI_NV5000 FANUC18I 4X MILL.MCAM-CONTROL</p>
+</li>
+<li><p>MORI_SEIKI_NV5000 FANUC18I 4X MILL.MCAM-MMD</p>
+</li>
+<li><p>MORI_SEIKI_NV5000 FANUC18I 4X MILL MM.MCAM-MMD</p>
+</li>
+<li><p>Mori_Seiki_NV5000 Fanuc18I 4X Mill.pst</p>
+</li>
+</ul>
+<p>CNC Post Revision: 28.00</p>
+<p>Machine Name: Mori Seiki NV-5000</p>
+<p>Control Name: Fanuc - MSG501 (Fanuc 18i)</p>
+<p>Description: Mori NV-5000 Vertical Mill</p>
+
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card-body">
+
+                    <div>
+                        <strong>File Type:</strong> Post
+                    </div>
+                    <div>
+
+                        <strong>Versions:</strong>
+                            <span>2026</span>
+
+                    </div>
+                    <div>
+                        <strong>Products:</strong>
+
+                            <span>Mastercam for SOLIDWORKS</span>
+                            <span>Mill</span>
+                    </div>
+
+                    
+
+                    
+
+                    <div>
+                        <strong>Downloads: </strong> 61
+                    </div>
+                    <div>
+                        <strong>Views: </strong> 17
+                    </div>
+
+
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+        
+
+            <div class="card-footer">
+                <div class="col-xs-12">
+                    <h5>Files available for download:</h5>
+                </div>
+
+                
+                        <div class="col-sm-6">
+                            <a class="btn btn-primary mb-1" href="/parts/28756/download">
+                                Mori_Seiki_NV5000 Fanuc18I 4X Mill.mcam-content
+                            </a>
+                        </div>
+
+                
+
+                
+
+
+
+            </div>
+
+        
+
+
+        <div class="card-footer">
+            <div class="col-xs-9">
+                <p class="small">Uploaded by  SoftwareEngineering_Services. Last modified on 7/18/2025</p>
+            </div>
+            
+
+        </div>
+
+
+    </div>
+    <div class="card mb-3 ">
+
+        <div class="row g-0">
+
+            <div class="col-md-3">
+                    <img class="img-fluid part-image" src="/images/placeholder.png">
+            </div>
+
+            <div class="col-md-6">
+                <div class="card-body">
+                    <p class="card-text">
+                        <a class="part-link" href="/parts/5757">Mori Seiki NVX5000 4X Mill.pst</a>
+                    </p>
+                    <p class="card-text">
+                        </p><p>Files included in package:</p>
+<ul>
+<li><p>Mori Seiki NVX5000 4X Mill.MCAM-CONTROL</p>
+</li>
+<li><p>Mori Seiki NVX5000 4X Mill.MCAM-MMD</p>
+</li>
+<li><p>Mori Seiki NVX5000 4X Mill MM.MCAM-MMD</p>
+</li>
+<li><p>Mori Seiki NVX5000 4X Mill.pst</p>
+</li>
+</ul>
+<p>CNC Post Revision: 28.00</p>
+<p>Machine Name: Mori Seiki NVX5000</p>
+<p>Control Name: MAPPS IV</p>
+<p>Description: Mori Seiki NVX5000 4X Mill Post</p>
+
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card-body">
+
+                    <div>
+                        <strong>File Type:</strong> Post
+                    </div>
+                    <div>
+
+                        <strong>Versions:</strong>
+                            <span>2026</span>
+
+                    </div>
+                    <div>
+                        <strong>Products:</strong>
+
+                            <span>Mastercam for SOLIDWORKS</span>
+                            <span>Mill</span>
+                    </div>
+
+                    
+
+                    
+
+                    <div>
+                        <strong>Downloads: </strong> 43
+                    </div>
+                    <div>
+                        <strong>Views: </strong> 11
+                    </div>
+
+
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+        
+
+            <div class="card-footer">
+                <div class="col-xs-12">
+                    <h5>Files available for download:</h5>
+                </div>
+
+                
+                        <div class="col-sm-6">
+                            <a class="btn btn-primary mb-1" href="/parts/28755/download">
+                                Mori Seiki NVX5000 4X Mill.mcam-content
+                            </a>
+                        </div>
+
+                
+
+                
+
+
+
+            </div>
+
+        
+
+
+        <div class="card-footer">
+            <div class="col-xs-9">
+                <p class="small">Uploaded by  SoftwareEngineering_Services. Last modified on 7/18/2025</p>
+            </div>
+            
+
+        </div>
+
+
+    </div>
+    <div class="card mb-3 ">
+
+        <div class="row g-0">
+
+            <div class="col-md-3">
+                    <img class="img-fluid part-image" src="/images/placeholder.png">
+            </div>
+
+            <div class="col-md-6">
+                <div class="card-body">
+                    <p class="card-text">
+                        <a class="part-link" href="/parts/5756">Mori Seiki NMH6300 MSX 5X HMC Mill.pst</a>
+                    </p>
+                    <p class="card-text">
+                        </p><p>Files included in package:</p>
+<ul>
+<li><p>Mori Seiki NMH6300 MSX 5X HMC Mill.MCAM-CONTROL</p>
+</li>
+<li><p>Mori Seiki NMH6300 MSX 5X HMC Mill.MCAM-MMD</p>
+</li>
+<li><p>Mori Seiki NMH6300 MSX 5X HMC Mill MM.MCAM-MMD</p>
+</li>
+<li><p>Mori Seiki NMH6300 MSX 5X HMC Mill.pst</p>
+</li>
+</ul>
+<p>CNC Post Revision: 28.00</p>
+<p>Machine Name: Mori Seiki NMH6300 DCG</p>
+<p>Control Name: Mori Seiki MSX-711, MSX-711III</p>
+<p>Description: 5 Axis Horizontal Mill</p>
+
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card-body">
+
+                    <div>
+                        <strong>File Type:</strong> Post
+                    </div>
+                    <div>
+
+                        <strong>Versions:</strong>
+                            <span>2026</span>
+
+                    </div>
+                    <div>
+                        <strong>Products:</strong>
+
+                            <span>Mastercam for SOLIDWORKS</span>
+                            <span>Mill</span>
+                    </div>
+
+                    
+
+                    
+
+                    <div>
+                        <strong>Downloads: </strong> 61
+                    </div>
+                    <div>
+                        <strong>Views: </strong> 18
+                    </div>
+
+
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+        
+
+            <div class="card-footer">
+                <div class="col-xs-12">
+                    <h5>Files available for download:</h5>
+                </div>
+
+                
+                        <div class="col-sm-6">
+                            <a class="btn btn-primary mb-1" href="/parts/28754/download">
+                                Mori Seiki NMH6300 MSX 5X HMC Mill.mcam-content
+                            </a>
+                        </div>
+
+                
+
+                
+
+
+
+            </div>
+
+        
+
+
+        <div class="card-footer">
+            <div class="col-xs-9">
+                <p class="small">Uploaded by  SoftwareEngineering_Services. Last modified on 7/18/2025</p>
+            </div>
+            
+
+        </div>
+
+
+    </div>
+    <div class="card mb-3 ">
+
+        <div class="row g-0">
+
+            <div class="col-md-3">
+                    <img class="img-fluid part-image" src="/images/placeholder.png">
+            </div>
+
+            <div class="col-md-6">
+                <div class="card-body">
+                    <p class="card-text">
+                        <a class="part-link" href="/parts/3893">Mori_Seiki_NV5000 Fanuc18I 4X Mill.pst</a>
+                    </p>
+                    <p class="card-text">
+                        </p><p>Files included in package:</p>
+<ul>
+<li><p>MORI_SEIKI_NV5000 FANUC18I 4X MILL.MCAM-CONTROL</p>
+</li>
+<li><p>MORI_SEIKI_NV5000 FANUC18I 4X MILL.MCAM-MMD</p>
+</li>
+<li><p>MORI_SEIKI_NV5000 FANUC18I 4X MILL MM.MCAM-MMD</p>
+</li>
+<li><p>Mori_Seiki_NV5000 Fanuc18I 4X Mill.pst</p>
+</li>
+</ul>
+<p>CNC Post Revision: 27.00</p>
+<p>Machine Name: Mori Seiki NV-5000</p>
+<p>Control Name: Fanuc - MSG501 (Fanuc 18i)</p>
+<p>Description: Mori NV-5000 Vertical Mill</p>
+
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card-body">
+
+                    <div>
+                        <strong>File Type:</strong> Post
+                    </div>
+                    <div>
+
+                        <strong>Versions:</strong>
+                            <span>2025</span>
+
+                    </div>
+                    <div>
+                        <strong>Products:</strong>
+
+                            <span>Mastercam for SOLIDWORKS</span>
+                            <span>Mill</span>
+                    </div>
+
+                    
+
+                    
+
+                    <div>
+                        <strong>Downloads: </strong> 127
+                    </div>
+                    <div>
+                        <strong>Views: </strong> 24
+                    </div>
+
+
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+        
+
+            <div class="card-footer">
+                <div class="col-xs-12">
+                    <h5>Files available for download:</h5>
+                </div>
+
+                
+                        <div class="col-sm-6">
+                            <a class="btn btn-primary mb-1" href="/parts/19720/download">
+                                Mori_Seiki_NV5000 Fanuc18I 4X Mill.mcam-content
+                            </a>
+                        </div>
+
+                
+
+                
+
+
+
+            </div>
+
+        
+
+
+        <div class="card-footer">
+            <div class="col-xs-9">
+                <p class="small">Uploaded by  SoftwareEngineering_Services. Last modified on 7/18/2025</p>
+            </div>
+            
+
+        </div>
+
+
+    </div>
+    <div class="card mb-3 ">
+
+        <div class="row g-0">
+
+            <div class="col-md-3">
+                    <img class="img-fluid part-image" src="/images/placeholder.png">
+            </div>
+
+            <div class="col-md-6">
+                <div class="card-body">
+                    <p class="card-text">
+                        <a class="part-link" href="/parts/3892">Mori Seiki NVX5000 4X Mill.pst</a>
+                    </p>
+                    <p class="card-text">
+                        </p><p>Files included in package:</p>
+<ul>
+<li><p>Mori Seiki NVX5000 4X Mill.MCAM-CONTROL</p>
+</li>
+<li><p>Mori Seiki NVX5000 4X Mill.MCAM-MMD</p>
+</li>
+<li><p>Mori Seiki NVX5000 4X Mill MM.MCAM-MMD</p>
+</li>
+<li><p>Mori Seiki NVX5000 4X Mill.pst</p>
+</li>
+</ul>
+<p>CNC Post Revision: 27.00</p>
+<p>Machine Name: Mori Seiki NVX5000</p>
+<p>Control Name: MAPPS IV</p>
+<p>Description: Mori Seiki NVX5000 4X Mill Post</p>
+
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card-body">
+
+                    <div>
+                        <strong>File Type:</strong> Post
+                    </div>
+                    <div>
+
+                        <strong>Versions:</strong>
+                            <span>2025</span>
+
+                    </div>
+                    <div>
+                        <strong>Products:</strong>
+
+                            <span>Mastercam for SOLIDWORKS</span>
+                            <span>Mill</span>
+                    </div>
+
+                    
+
+                    
+
+                    <div>
+                        <strong>Downloads: </strong> 80
+                    </div>
+                    <div>
+                        <strong>Views: </strong> 11
+                    </div>
+
+
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+        
+
+            <div class="card-footer">
+                <div class="col-xs-12">
+                    <h5>Files available for download:</h5>
+                </div>
+
+                
+                        <div class="col-sm-6">
+                            <a class="btn btn-primary mb-1" href="/parts/19719/download">
+                                Mori Seiki NVX5000 4X Mill.mcam-content
+                            </a>
+                        </div>
+
+                
+
+                
+
+
+
+            </div>
+
+        
+
+
+        <div class="card-footer">
+            <div class="col-xs-9">
+                <p class="small">Uploaded by  SoftwareEngineering_Services. Last modified on 7/18/2025</p>
+            </div>
+            
+
+        </div>
+
+
+    </div>
+    <div class="card mb-3 ">
+
+        <div class="row g-0">
+
+            <div class="col-md-3">
+                    <img class="img-fluid part-image" src="/images/placeholder.png">
+            </div>
+
+            <div class="col-md-6">
+                <div class="card-body">
+                    <p class="card-text">
+                        <a class="part-link" href="/parts/3891">Mori Seiki NMH6300 MSX 5X HMC Mill.pst</a>
+                    </p>
+                    <p class="card-text">
+                        </p><p>Files included in package:</p>
+<ul>
+<li><p>Mori Seiki NMH6300 MSX 5X HMC Mill.MCAM-CONTROL</p>
+</li>
+<li><p>Mori Seiki NMH6300 MSX 5X HMC Mill.MCAM-MMD</p>
+</li>
+<li><p>Mori Seiki NMH6300 MSX 5X HMC Mill MM.MCAM-MMD</p>
+</li>
+<li><p>Mori Seiki NMH6300 MSX 5X HMC Mill.pst</p>
+</li>
+</ul>
+<p>CNC Post Revision: 27.00</p>
+<p>Machine Name: Mori Seiki NMH6300 DCG</p>
+<p>Control Name: Mori Seiki MSX-711, MSX-711III</p>
+<p>Description: 5 Axis Horizontal Mill</p>
+
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card-body">
+
+                    <div>
+                        <strong>File Type:</strong> Post
+                    </div>
+                    <div>
+
+                        <strong>Versions:</strong>
+                            <span>2025</span>
+
+                    </div>
+                    <div>
+                        <strong>Products:</strong>
+
+                            <span>Mastercam for SOLIDWORKS</span>
+                            <span>Mill</span>
+                    </div>
+
+                    
+
+                    
+
+                    <div>
+                        <strong>Downloads: </strong> 120
+                    </div>
+                    <div>
+                        <strong>Views: </strong> 25
+                    </div>
+
+
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+        
+
+            <div class="card-footer">
+                <div class="col-xs-12">
+                    <h5>Files available for download:</h5>
+                </div>
+
+                
+                        <div class="col-sm-6">
+                            <a class="btn btn-primary mb-1" href="/parts/19718/download">
+                                Mori Seiki NMH6300 MSX 5X HMC Mill.mcam-content
+                            </a>
+                        </div>
+
+                
+
+                
+
+
+
+            </div>
+
+        
+
+
+        <div class="card-footer">
+            <div class="col-xs-9">
+                <p class="small">Uploaded by  SoftwareEngineering_Services. Last modified on 7/18/2025</p>
+            </div>
+            
+
+        </div>
+
+
+    </div>
+    <div class="card mb-3 ">
+
+        <div class="row g-0">
+
+            <div class="col-md-3">
+                    <img class="img-fluid part-image" src="/images/placeholder.png">
+            </div>
+
+            <div class="col-md-6">
+                <div class="card-body">
+                    <p class="card-text">
+                        <a class="part-link" href="/parts/3571">Mori_Seiki_NV5000 Fanuc18I 4X Mill.pst</a>
+                    </p>
+                    <p class="card-text">
+                        </p><p>Files included in package:</p>
+<ul>
+<li><p>MORI_SEIKI_NV5000 FANUC18I 4X MILL.MCAM-CONTROL</p>
+</li>
+<li><p>MORI_SEIKI_NV5000 FANUC18I 4X MILL.MCAM-MMD</p>
+</li>
+<li><p>MORI_SEIKI_NV5000 FANUC18I 4X MILL MM.MCAM-MMD</p>
+</li>
+<li><p>Mori_Seiki_NV5000 Fanuc18I 4X Mill.pst</p>
+</li>
+</ul>
+<p>CNC Post Revision: 26.00</p>
+<p>Machine Name: Mori Seiki NV-5000</p>
+<p>Control Name: Fanuc - MSG501 (Fanuc 18i)</p>
+<p>Description: Mori NV-5000 Vertical Mill</p>
+
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card-body">
+
+                    <div>
+                        <strong>File Type:</strong> Post
+                    </div>
+                    <div>
+
+                        <strong>Versions:</strong>
+                            <span>2024</span>
+
+                    </div>
+                    <div>
+                        <strong>Products:</strong>
+
+                            <span>Mill</span>
+                    </div>
+
+                    
+
+                    
+
+                    <div>
+                        <strong>Downloads: </strong> 152
+                    </div>
+                    <div>
+                        <strong>Views: </strong> 27
+                    </div>
+
+
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+        
+
+            <div class="card-footer">
+                <div class="col-xs-12">
+                    <h5>Files available for download:</h5>
+                </div>
+
+                
+                        <div class="col-sm-6">
+                            <a class="btn btn-primary mb-1" href="/parts/16772/download">
+                                Mori_Seiki_NV5000 Fanuc18I 4X Mill.mcam-content
+                            </a>
+                        </div>
+
+                
+
+                
+
+
+
+            </div>
+
+        
+
+
+        <div class="card-footer">
+            <div class="col-xs-9">
+                <p class="small">Uploaded by  SoftwareEngineering_Services. Last modified on 7/18/2025</p>
+            </div>
+            
+
+        </div>
+
+
+    </div>
+    <div class="card mb-3 ">
+
+        <div class="row g-0">
+
+            <div class="col-md-3">
+                    <img class="img-fluid part-image" src="/images/placeholder.png">
+            </div>
+
+            <div class="col-md-6">
+                <div class="card-body">
+                    <p class="card-text">
+                        <a class="part-link" href="/parts/3570">Mori Seiki NVX5000 4X Mill.pst</a>
+                    </p>
+                    <p class="card-text">
+                        </p><p>Files included in package:</p>
+<ul>
+<li><p>Mori Seiki NVX5000 4X Mill.MCAM-CONTROL</p>
+</li>
+<li><p>Mori Seiki NVX5000 4X Mill.MCAM-MMD</p>
+</li>
+<li><p>Mori Seiki NVX5000 4X Mill MM.MCAM-MMD</p>
+</li>
+<li><p>Mori Seiki NVX5000 4X Mill.pst</p>
+</li>
+</ul>
+<p>CNC Post Revision: 26.00</p>
+<p>Machine Name: Mori Seiki NVX5000</p>
+<p>Control Name: MAPPS IV</p>
+<p>Description: Mori Seiki NVX5000 4X Mill Post</p>
+
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card-body">
+
+                    <div>
+                        <strong>File Type:</strong> Post
+                    </div>
+                    <div>
+
+                        <strong>Versions:</strong>
+                            <span>2024</span>
+
+                    </div>
+                    <div>
+                        <strong>Products:</strong>
+
+                            <span>Mill</span>
+                    </div>
+
+                    
+
+                    
+
+                    <div>
+                        <strong>Downloads: </strong> 118
+                    </div>
+                    <div>
+                        <strong>Views: </strong> 24
+                    </div>
+
+
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+        
+
+            <div class="card-footer">
+                <div class="col-xs-12">
+                    <h5>Files available for download:</h5>
+                </div>
+
+                
+                        <div class="col-sm-6">
+                            <a class="btn btn-primary mb-1" href="/parts/16771/download">
+                                Mori Seiki NVX5000 4X Mill.mcam-content
+                            </a>
+                        </div>
+
+                
+
+                
+
+
+
+            </div>
+
+        
+
+
+        <div class="card-footer">
+            <div class="col-xs-9">
+                <p class="small">Uploaded by  SoftwareEngineering_Services. Last modified on 7/18/2025</p>
+            </div>
+            
+
+        </div>
+
+
+    </div>
+    <div class="card mb-3 ">
+
+        <div class="row g-0">
+
+            <div class="col-md-3">
+                    <img class="img-fluid part-image" src="/images/placeholder.png">
+            </div>
+
+            <div class="col-md-6">
+                <div class="card-body">
+                    <p class="card-text">
+                        <a class="part-link" href="/parts/3569">Mori Seiki NMH6300 MSX 5X HMC Mill.pst</a>
+                    </p>
+                    <p class="card-text">
+                        </p><p>Files included in package:</p>
+<ul>
+<li><p>Mori Seiki NMH6300 MSX 5X HMC Mill.MCAM-CONTROL</p>
+</li>
+<li><p>Mori Seiki NMH6300 MSX 5X HMC Mill.MCAM-MMD</p>
+</li>
+<li><p>Mori Seiki NMH6300 MSX 5X HMC Mill MM.MCAM-MMD</p>
+</li>
+<li><p>Mori Seiki NMH6300 MSX 5X HMC Mill.pst</p>
+</li>
+</ul>
+<p>CNC Post Revision: 26.00</p>
+<p>Machine Name: Mori Seiki NMH6300 DCG</p>
+<p>Control Name: Mori Seiki MSX-711, MSX-711III</p>
+<p>Description: 5 Axis Horizontal Mill</p>
+
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card-body">
+
+                    <div>
+                        <strong>File Type:</strong> Post
+                    </div>
+                    <div>
+
+                        <strong>Versions:</strong>
+                            <span>2024</span>
+
+                    </div>
+                    <div>
+                        <strong>Products:</strong>
+
+                            <span>Mill</span>
+                    </div>
+
+                    
+
+                    
+
+                    <div>
+                        <strong>Downloads: </strong> 140
+                    </div>
+                    <div>
+                        <strong>Views: </strong> 40
+                    </div>
+
+
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+        
+
+            <div class="card-footer">
+                <div class="col-xs-12">
+                    <h5>Files available for download:</h5>
+                </div>
+
+                
+                        <div class="col-sm-6">
+                            <a class="btn btn-primary mb-1" href="/parts/16770/download">
+                                Mori Seiki NMH6300 MSX 5X HMC Mill.mcam-content
+                            </a>
+                        </div>
+
+                
+
+                
+
+
+
+            </div>
+
+        
+
+
+        <div class="card-footer">
+            <div class="col-xs-9">
+                <p class="small">Uploaded by  SoftwareEngineering_Services. Last modified on 7/18/2025</p>
+            </div>
+            
+
+        </div>
+
+
+    </div>
+    <div class="card mb-3 ">
+
+        <div class="row g-0">
+
+            <div class="col-md-3">
+                    <img class="img-fluid part-image" src="/images/placeholder.png">
+            </div>
+
+            <div class="col-md-6">
+                <div class="card-body">
+                    <p class="card-text">
+                        <a class="part-link" href="/parts/2876">Mori Seiki NMH6300 MSX 5X HMC Mill.pst</a>
+                    </p>
+                    <p class="card-text">
+                        </p><p>Files included in package:</p>
+<ul>
+<li><p>Mori Seiki NMH6300 MSX 5X HMC Mill.MCAM-CONTROL</p>
+</li>
+<li><p>Mori Seiki NMH6300 MSX 5X HMC Mill.MCAM-MMD</p>
+</li>
+<li><p>Mori Seiki NMH6300 MSX 5X HMC Mill MM.MCAM-MMD</p>
+</li>
+<li><p>Mori Seiki NMH6300 MSX 5X HMC Mill.pst</p>
+</li>
+</ul>
+<p>CNC Post Revision: 25.85</p>
+<p>Machine Name: Mori Seiki NMH6300 DCG</p>
+<p>Control Name: Mori Seiki MSX-711, MSX-711III</p>
+<p>Description: 5 Axis Horizontal Mill</p>
+<p>Revision log:</p>
+<p>25.83: D-51172 / R-31072 - Enhanced logic on clamping and unclamping on primary and secondary rotary axes</p>
+
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card-body">
+
+                    <div>
+                        <strong>File Type:</strong> Post
+                    </div>
+                    <div>
+
+                        <strong>Versions:</strong>
+                            <span>2023</span>
+
+                    </div>
+                    <div>
+                        <strong>Products:</strong>
+
+                            <span>Mill</span>
+                    </div>
+
+                    
+
+                    
+
+                    <div>
+                        <strong>Downloads: </strong> 127
+                    </div>
+                    <div>
+                        <strong>Views: </strong> 61
+                    </div>
+
+
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+        
+
+            <div class="card-footer">
+                <div class="col-xs-12">
+                    <h5>Files available for download:</h5>
+                </div>
+
+                
+                        <div class="col-sm-6">
+                            <a class="btn btn-primary mb-1" href="/parts/14693/download">
+                                Mori Seiki NMH6300 MSX 5X HMC Mill.mcam-content
+                            </a>
+                        </div>
+
+                
+
+                
+
+
+
+            </div>
+
+        
+
+
+        <div class="card-footer">
+            <div class="col-xs-9">
+                <p class="small">Uploaded by Craig Butler. Last modified on 7/18/2025</p>
+            </div>
+            
+
+        </div>
+
+
+    </div>
+    <div class="card mb-3 ">
+
+        <div class="row g-0">
+
+            <div class="col-md-3">
+                    <img class="img-fluid part-image" src="/images/placeholder.png">
+            </div>
+
+            <div class="col-md-6">
+                <div class="card-body">
+                    <p class="card-text">
+                        <a class="part-link" href="/parts/2083">Mori_Seiki_NV5000 Fanuc18I 4X Mill.pst</a>
+                    </p>
+                    <p class="card-text">
+                        </p><p>Files included in package:</p>
+<ul>
+<li><p>MORI_SEIKI_NV5000 FANUC18I 4X MILL.MCAM-CONTROL</p>
+</li>
+<li><p>MORI_SEIKI_NV5000 FANUC18I 4X MILL.MCAM-MMD</p>
+</li>
+<li><p>MORI_SEIKI_NV5000 FANUC18I 4X MILL MM.MCAM-MMD</p>
+</li>
+<li><p>Mori_Seiki_NV5000 Fanuc18I 4X Mill.pst</p>
+</li>
+</ul>
+<p>CNC Post Revision: 25.80</p>
+<p>Machine Name: Mori Seiki NV-5000</p>
+<p>Control Name: Fanuc - MSG501 (Fanuc 18i)</p>
+<p>Description: Mori NV-5000 Vertical Mill</p>
+
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card-body">
+
+                    <div>
+                        <strong>File Type:</strong> Post
+                    </div>
+                    <div>
+
+                        <strong>Versions:</strong>
+                            <span>2023</span>
+
+                    </div>
+                    <div>
+                        <strong>Products:</strong>
+
+                            <span>Mastercam for SOLIDWORKS</span>
+                            <span>Mill</span>
+                    </div>
+
+                    
+
+                    
+
+                    <div>
+                        <strong>Downloads: </strong> 148
+                    </div>
+                    <div>
+                        <strong>Views: </strong> 31
+                    </div>
+
+
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+        
+
+            <div class="card-footer">
+                <div class="col-xs-12">
+                    <h5>Files available for download:</h5>
+                </div>
+
+                
+                        <div class="col-sm-6">
+                            <a class="btn btn-primary mb-1" href="/parts/9551/download">
+                                Mori_Seiki_NV5000 Fanuc18I 4X Mill.mcam-content
+                            </a>
+                        </div>
+
+                
+
+                
+
+
+
+            </div>
+
+        
+
+
+        <div class="card-footer">
+            <div class="col-xs-9">
+                <p class="small">Uploaded by  SoftwareEngineering_Services. Last modified on 7/18/2025</p>
+            </div>
+            
+
+        </div>
+
+
+    </div>
+    <div class="card mb-3 ">
+
+        <div class="row g-0">
+
+            <div class="col-md-3">
+                    <img class="img-fluid part-image" src="/images/placeholder.png">
+            </div>
+
+            <div class="col-md-6">
+                <div class="card-body">
+                    <p class="card-text">
+                        <a class="part-link" href="/parts/2082">Mori Seiki NVX5000 4X Mill.pst</a>
+                    </p>
+                    <p class="card-text">
+                        </p><p>Files included in package:</p>
+<ul>
+<li><p>Mori Seiki NVX5000 4X Mill.MCAM-CONTROL</p>
+</li>
+<li><p>Mori Seiki NVX5000 4X Mill.MCAM-MMD</p>
+</li>
+<li><p>Mori Seiki NVX5000 4X Mill MM.MCAM-MMD</p>
+</li>
+<li><p>Mori Seiki NVX5000 4X Mill.pst</p>
+</li>
+</ul>
+<p>CNC Post Revision: 25.81</p>
+<p>Machine Name: Mori Seiki NVX5000</p>
+<p>Control Name: MAPPS IV</p>
+<p>Description: Mori Seiki NVX5000 4X Mill Post</p>
+
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card-body">
+
+                    <div>
+                        <strong>File Type:</strong> Post
+                    </div>
+                    <div>
+
+                        <strong>Versions:</strong>
+                            <span>2023</span>
+
+                    </div>
+                    <div>
+                        <strong>Products:</strong>
+
+                            <span>Mastercam for SOLIDWORKS</span>
+                            <span>Mill</span>
+                    </div>
+
+                    
+
+                    
+
+                    <div>
+                        <strong>Downloads: </strong> 106
+                    </div>
+                    <div>
+                        <strong>Views: </strong> 14
+                    </div>
+
+
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+        
+
+            <div class="card-footer">
+                <div class="col-xs-12">
+                    <h5>Files available for download:</h5>
+                </div>
+
+                
+                        <div class="col-sm-6">
+                            <a class="btn btn-primary mb-1" href="/parts/9550/download">
+                                Mori Seiki NVX5000 4X Mill.mcam-content
+                            </a>
+                        </div>
+
+                
+
+                
+
+
+
+            </div>
+
+        
+
+
+        <div class="card-footer">
+            <div class="col-xs-9">
+                <p class="small">Uploaded by  SoftwareEngineering_Services. Last modified on 7/18/2025</p>
+            </div>
+            
+
+        </div>
+
+
+    </div>
+    <div class="card mb-3 ">
+
+        <div class="row g-0">
+
+            <div class="col-md-3">
+                    <img class="img-fluid part-image" src="/images/placeholder.png">
+            </div>
+
+            <div class="col-md-6">
+                <div class="card-body">
+                    <p class="card-text">
+                        <a class="part-link" href="/parts/1393">Mori_Seiki_NV5000 Fanuc18I 4X Mill.pst</a>
+                    </p>
+                    <p class="card-text">
+                        </p><p>Files included in package:</p>
+<ul>
+<li><p>MORI_SEIKI_NV5000 FANUC18I 4X MILL.MCAM-CONTROL</p>
+</li>
+<li><p>MORI_SEIKI_NV5000 FANUC18I 4X MILL.MCAM-MMD</p>
+</li>
+<li><p>MORI_SEIKI_NV5000 FANUC18I 4X MILL MM.MCAM-MMD</p>
+</li>
+<li><p>Mori_Seiki_NV5000 Fanuc18I 4X Mill.pst</p>
+</li>
+</ul>
+<p>CNC Post Revision: 24.80</p>
+<p>Machine Name: Mori Seiki NV-5000</p>
+<p>Control Name: Fanuc - MSG501 (Fanuc 18i)</p>
+<p>Description: Mori NV-5000 Vertical Mill</p>
+
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card-body">
+
+                    <div>
+                        <strong>File Type:</strong> Post
+                    </div>
+                    <div>
+
+                        <strong>Versions:</strong>
+                            <span>2022</span>
+
+                    </div>
+                    <div>
+                        <strong>Products:</strong>
+
+                            <span>Mastercam for SOLIDWORKS</span>
+                            <span>Mill</span>
+                    </div>
+
+                    
+
+                    
+
+                    <div>
+                        <strong>Downloads: </strong> 169
+                    </div>
+                    <div>
+                        <strong>Views: </strong> 33
+                    </div>
+
+
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+        
+
+            <div class="card-footer">
+                <div class="col-xs-12">
+                    <h5>Files available for download:</h5>
+                </div>
+
+                
+                        <div class="col-sm-6">
+                            <a class="btn btn-primary mb-1" href="/parts/5309/download">
+                                Mori_Seiki_NV5000 Fanuc18I 4X Mill.mcam-content
+                            </a>
+                        </div>
+
+                
+
+                
+
+
+
+            </div>
+
+        
+
+
+        <div class="card-footer">
+            <div class="col-xs-9">
+                <p class="small">Uploaded by  SoftwareEngineering_Services. Last modified on 7/18/2025</p>
+            </div>
+            
+
+        </div>
+
+
+    </div>
+    <div class="card mb-3 ">
+
+        <div class="row g-0">
+
+            <div class="col-md-3">
+                    <img class="img-fluid part-image" src="/images/placeholder.png">
+            </div>
+
+            <div class="col-md-6">
+                <div class="card-body">
+                    <p class="card-text">
+                        <a class="part-link" href="/parts/1392">Mori Seiki NVX5000 4X Mill.pst</a>
+                    </p>
+                    <p class="card-text">
+                        </p><p>Files included in package:</p>
+<ul>
+<li><p>Mori Seiki NVX5000 4X Mill.MCAM-CONTROL</p>
+</li>
+<li><p>Mori Seiki NVX5000 4X Mill.MCAM-MMD</p>
+</li>
+<li><p>Mori Seiki NVX5000 4X Mill MM.MCAM-MMD</p>
+</li>
+<li><p>Mori Seiki NVX5000 4X Mill.pst</p>
+</li>
+</ul>
+<p>CNC Post Revision: 24.81</p>
+<p>Machine Name: Mori Seiki NVX5000</p>
+<p>Control Name: MAPPS IV</p>
+<p>Description: Mori Seiki NVX5000 4X Mill Post</p>
+
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card-body">
+
+                    <div>
+                        <strong>File Type:</strong> Post
+                    </div>
+                    <div>
+
+                        <strong>Versions:</strong>
+                            <span>2022</span>
+
+                    </div>
+                    <div>
+                        <strong>Products:</strong>
+
+                            <span>Mastercam for SOLIDWORKS</span>
+                            <span>Mill</span>
+                    </div>
+
+                    
+
+                    
+
+                    <div>
+                        <strong>Downloads: </strong> 118
+                    </div>
+                    <div>
+                        <strong>Views: </strong> 16
+                    </div>
+
+
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+        
+
+            <div class="card-footer">
+                <div class="col-xs-12">
+                    <h5>Files available for download:</h5>
+                </div>
+
+                
+                        <div class="col-sm-6">
+                            <a class="btn btn-primary mb-1" href="/parts/6019/download">
+                                Mori Seiki NVX5000 4X Mill.mcam-content
+                            </a>
+                        </div>
+
+                
+
+                
+
+
+
+            </div>
+
+        
+
+
+        <div class="card-footer">
+            <div class="col-xs-9">
+                <p class="small">Uploaded by  SoftwareEngineering_Services. Last modified on 7/18/2025</p>
+            </div>
+            
+
+        </div>
+
+
+    </div>
+    <div class="card mb-3 ">
+
+        <div class="row g-0">
+
+            <div class="col-md-3">
+                    <img class="img-fluid part-image" src="/images/placeholder.png">
+            </div>
+
+            <div class="col-md-6">
+                <div class="card-body">
+                    <p class="card-text">
+                        <a class="part-link" href="/parts/1391">Mori Seiki NMH6300 MSX 5X HMC Mill.pst</a>
+                    </p>
+                    <p class="card-text">
+                        </p><p>Files included in package:</p>
+<ul>
+<li><p>Mori Seiki NMH6300 MSX 5X HMC Mill.MCAM-CONTROL</p>
+</li>
+<li><p>Mori Seiki NMH6300 MSX 5X HMC Mill.MCAM-MMD</p>
+</li>
+<li><p>Mori Seiki NMH6300 MSX 5X HMC Mill MM.MCAM-MMD</p>
+</li>
+<li><p>Mori Seiki NMH6300 MSX 5X HMC Mill.pst</p>
+</li>
+</ul>
+<p>CNC Post Revision: 24.83</p>
+<p>Machine Name: Mori Seiki NMH6300 DCG</p>
+<p>Control Name: Mori Seiki MSX-711, MSX-711III</p>
+<p>Description: 5 Axis Horizontal Mill</p>
+
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card-body">
+
+                    <div>
+                        <strong>File Type:</strong> Post
+                    </div>
+                    <div>
+
+                        <strong>Versions:</strong>
+                            <span>2022</span>
+
+                    </div>
+                    <div>
+                        <strong>Products:</strong>
+
+                            <span>Mastercam for SOLIDWORKS</span>
+                            <span>Mill</span>
+                    </div>
+
+                    
+
+                    
+
+                    <div>
+                        <strong>Downloads: </strong> 157
+                    </div>
+                    <div>
+                        <strong>Views: </strong> 33
+                    </div>
+
+
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+        
+
+            <div class="card-footer">
+                <div class="col-xs-12">
+                    <h5>Files available for download:</h5>
+                </div>
+
+                
+                        <div class="col-sm-6">
+                            <a class="btn btn-primary mb-1" href="/parts/5307/download">
+                                Mori Seiki NMH6300 MSX 5X HMC Mill.mcam-content
+                            </a>
+                        </div>
+
+                
+
+                
+
+
+
+            </div>
+
+        
+
+
+        <div class="card-footer">
+            <div class="col-xs-9">
+                <p class="small">Uploaded by  SoftwareEngineering_Services. Last modified on 7/18/2025</p>
+            </div>
+            
+
+        </div>
+
+
+    </div>
+    <div class="card mb-3 ">
+
+        <div class="row g-0">
+
+            <div class="col-md-3">
+                    <img class="img-fluid part-image" src="/images/placeholder.png">
+            </div>
+
+            <div class="col-md-6">
+                <div class="card-body">
+                    <p class="card-text">
+                        <a class="part-link" href="/parts/716">Mori_Seiki_NV5000 Fanuc18I 4X Mill.pst</a>
+                    </p>
+                    <p class="card-text">
+                        </p><p>Files included in package:</p>
+<ul>
+<li><p>MORI_SEIKI_NV5000 FANUC18I 4X MILL.MCAM-CONTROL</p>
+</li>
+<li><p>MORI_SEIKI_NV5000 FANUC18I 4X MILL.MCAM-MMD</p>
+</li>
+<li><p>MORI_SEIKI_NV5000 FANUC18I 4X MILL MM.MCAM-MMD</p>
+</li>
+<li><p>Mori_Seiki_NV5000 Fanuc18I 4X Mill.pst</p>
+</li>
+</ul>
+<p>CNC Post Revision: 23.80</p>
+<p>Machine Name: Mori Seiki NV-5000</p>
+<p>Control Name: Fanuc - MSG501 (Fanuc 18i)</p>
+<p>Description: Mori NV-5000 Vertical Mill</p>
+
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card-body">
+
+                    <div>
+                        <strong>File Type:</strong> Post
+                    </div>
+                    <div>
+
+                        <strong>Versions:</strong>
+                            <span>2021</span>
+
+                    </div>
+                    <div>
+                        <strong>Products:</strong>
+
+                            <span>Mastercam for SOLIDWORKS</span>
+                            <span>Mill</span>
+                    </div>
+
+                    
+
+                    
+
+                    <div>
+                        <strong>Downloads: </strong> 152
+                    </div>
+                    <div>
+                        <strong>Views: </strong> 35
+                    </div>
+
+
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+        
+
+            <div class="card-footer">
+                <div class="col-xs-12">
+                    <h5>Files available for download:</h5>
+                </div>
+
+                
+                        <div class="col-sm-6">
+                            <a class="btn btn-primary mb-1" href="/parts/1926/download">
+                                Mori_Seiki_NV5000 Fanuc18I 4X Mill.mcam-content
+                            </a>
+                        </div>
+
+                
+
+                
+
+
+
+            </div>
+
+        
+
+
+        <div class="card-footer">
+            <div class="col-xs-9">
+                <p class="small">Uploaded by  SoftwareEngineering_Services. Last modified on 7/18/2025</p>
+            </div>
+            
+
+        </div>
+
+
+    </div>
+    <div class="card mb-3 ">
+
+        <div class="row g-0">
+
+            <div class="col-md-3">
+                    <img class="img-fluid part-image" src="/images/placeholder.png">
+            </div>
+
+            <div class="col-md-6">
+                <div class="card-body">
+                    <p class="card-text">
+                        <a class="part-link" href="/parts/715">Mori Seiki NVX5000 4X Mill.pst</a>
+                    </p>
+                    <p class="card-text">
+                        </p><p>Files included in package:</p>
+<ul>
+<li><p>Mori Seiki NVX5000 4X Mill.MCAM-CONTROL</p>
+</li>
+<li><p>Mori Seiki NVX5000 4X Mill.MCAM-MMD</p>
+</li>
+<li><p>Mori Seiki NVX5000 4X Mill MM.MCAM-MMD</p>
+</li>
+<li><p>Mori Seiki NVX5000 4X Mill.pst</p>
+</li>
+</ul>
+<p>CNC Post Revision: 23.81</p>
+<p>Machine Name: Mori Seiki NVX5000</p>
+<p>Control Name: MAPPS IV</p>
+<p>Description: Mori Seiki NVX5000 4X Mill Post</p>
+
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card-body">
+
+                    <div>
+                        <strong>File Type:</strong> Post
+                    </div>
+                    <div>
+
+                        <strong>Versions:</strong>
+                            <span>2021</span>
+
+                    </div>
+                    <div>
+                        <strong>Products:</strong>
+
+                            <span>Mastercam for SOLIDWORKS</span>
+                            <span>Mill</span>
+                    </div>
+
+                    
+
+                    
+
+                    <div>
+                        <strong>Downloads: </strong> 109
+                    </div>
+                    <div>
+                        <strong>Views: </strong> 12
+                    </div>
+
+
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+        
+
+            <div class="card-footer">
+                <div class="col-xs-12">
+                    <h5>Files available for download:</h5>
+                </div>
+
+                
+                        <div class="col-sm-6">
+                            <a class="btn btn-primary mb-1" href="/parts/1925/download">
+                                Mori Seiki NVX5000 4X Mill.mcam-content
+                            </a>
+                        </div>
+
+                
+
+                
+
+
+
+            </div>
+
+        
+
+
+        <div class="card-footer">
+            <div class="col-xs-9">
+                <p class="small">Uploaded by  SoftwareEngineering_Services. Last modified on 7/18/2025</p>
+            </div>
+            
+
+        </div>
+
+
+    </div>
+    <div class="card mb-3 ">
+
+        <div class="row g-0">
+
+            <div class="col-md-3">
+                    <img class="img-fluid part-image" src="/images/placeholder.png">
+            </div>
+
+            <div class="col-md-6">
+                <div class="card-body">
+                    <p class="card-text">
+                        <a class="part-link" href="/parts/714">Mori Seiki NMH6300 MSX 5X HMC Mill.pst</a>
+                    </p>
+                    <p class="card-text">
+                        </p><p>Files included in package:</p>
+<ul>
+<li><p>Mori Seiki NMH6300 MSX 5X HMC Mill.MCAM-CONTROL</p>
+</li>
+<li><p>Mori Seiki NMH6300 MSX 5X HMC Mill.MCAM-MMD</p>
+</li>
+<li><p>Mori Seiki NMH6300 MSX 5X HMC Mill MM.MCAM-MMD</p>
+</li>
+<li><p>Mori Seiki NMH6300 MSX 5X HMC Mill.pst</p>
+</li>
+</ul>
+<p>CNC Post Revision: 23.83</p>
+<p>Machine Name: Mori Seiki NMH6300 DCG</p>
+<p>Control Name: Mori Seiki MSX-711, MSX-711III</p>
+<p>Description: 5 Axis Horizontal Mill</p>
+
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card-body">
+
+                    <div>
+                        <strong>File Type:</strong> Post
+                    </div>
+                    <div>
+
+                        <strong>Versions:</strong>
+                            <span>2021</span>
+
+                    </div>
+                    <div>
+                        <strong>Products:</strong>
+
+                            <span>Mastercam for SOLIDWORKS</span>
+                            <span>Mill</span>
+                    </div>
+
+                    
+
+                    
+
+                    <div>
+                        <strong>Downloads: </strong> 163
+                    </div>
+                    <div>
+                        <strong>Views: </strong> 32
+                    </div>
+
+
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+        
+
+            <div class="card-footer">
+                <div class="col-xs-12">
+                    <h5>Files available for download:</h5>
+                </div>
+
+                
+                        <div class="col-sm-6">
+                            <a class="btn btn-primary mb-1" href="/parts/1924/download">
+                                Mori Seiki NMH6300 MSX 5X HMC Mill.mcam-content
+                            </a>
+                        </div>
+
+                
+
+                
+
+
+
+            </div>
+
+        
+
+
+        <div class="card-footer">
+            <div class="col-xs-9">
+                <p class="small">Uploaded by  SoftwareEngineering_Services. Last modified on 7/18/2025</p>
+            </div>
+            
+
+        </div>
+
+
+    </div>
+    <div class="card mb-3 ">
+
+        <div class="row g-0">
+
+            <div class="col-md-3">
+                    <img class="img-fluid part-image" src="/images/placeholder.png">
+            </div>
+
+            <div class="col-md-6">
+                <div class="card-body">
+                    <p class="card-text">
+                        <a class="part-link" href="/parts/501">Mori_Seiki_NV5000 Fanuc18I 4X Mill</a>
+                    </p>
+                    <p class="card-text">
+                        </p><p>Files included in package:</p>
+<ul>
+<li><p>MORI_SEIKI_NV5000 FANUC18I 4X MILL.MCAM-CONTROL</p>
+</li>
+<li><p>MORI_SEIKI_NV5000 FANUC18I 4X MILL.MCAM-MMD</p>
+</li>
+<li><p>MORI_SEIKI_NV5000 FANUC18I 4X MILL MM.MCAM-MMD</p>
+</li>
+<li><p>Mori_Seiki_NV5000 Fanuc18I 4X Mill.pst</p>
+</li>
+</ul>
+<p>CNC Post Revision: 22.80</p>
+<p>Machine Name: Mori Seiki NV-5000</p>
+<p>Control: Fanuc - MSG501 (Fanuc 18i)</p>
+<p>Description: Mori NV-5000 Vertical Mill</p>
+<p>Updates/Features:</p>
+<ul>
+<li>Beginning with Mastercam 2018, all post text edits MUST be made with the Control Definition Manager. <strong>Do NOT edit the post text manually.</strong></li>
+</ul>
+
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card-body">
+
+                    <div>
+                        <strong>File Type:</strong> Post
+                    </div>
+                    <div>
+
+                        <strong>Versions:</strong>
+                            <span>2020</span>
+
+                    </div>
+                    <div>
+                        <strong>Products:</strong>
+
+                            <span>Mastercam for SOLIDWORKS</span>
+                            <span>Mill</span>
+                    </div>
+
+                    
+
+                    
+
+                    <div>
+                        <strong>Downloads: </strong> 202
+                    </div>
+                    <div>
+                        <strong>Views: </strong> 78
+                    </div>
+
+
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+        
+
+            <div class="card-footer">
+                <div class="col-xs-12">
+                    <h5>Files available for download:</h5>
+                </div>
+
+                
+                        <div class="col-sm-6">
+                            <a class="btn btn-primary mb-1" href="/parts/896/download">
+                                Mori_Seiki_NV5000 Fanuc18I 4X Mill.mcam-content
+                            </a>
+                        </div>
+
+                
+
+                
+
+
+
+            </div>
+
+        
+
+
+        <div class="card-footer">
+            <div class="col-xs-9">
+                <p class="small">Uploaded by Don Boire. Last modified on 7/18/2025</p>
+            </div>
+            
+
+        </div>
+
+
+    </div>
+    <div class="card mb-3 ">
+
+        <div class="row g-0">
+
+            <div class="col-md-3">
+                    <img class="img-fluid part-image" src="/images/placeholder.png">
+            </div>
+
+            <div class="col-md-6">
+                <div class="card-body">
+                    <p class="card-text">
+                        <a class="part-link" href="/parts/500">Mori Seiki NVX5000 4X Mill</a>
+                    </p>
+                    <p class="card-text">
+                        </p><p>Files included in package:</p>
+<ul>
+<li><p>Mori Seiki NVX5000 4X Mill.MCAM-CONTROL</p>
+</li>
+<li><p>Mori Seiki NVX5000 4X Mill.MCAM-MMD</p>
+</li>
+<li><p>Mori Seiki NVX5000 4X Mill MM.MCAM-MMD</p>
+</li>
+<li><p>Mori Seiki NVX5000 4X Mill.pst</p>
+</li>
+</ul>
+<p>CNC Post Revision: 22.81</p>
+<p>Machine Name: Mori Seiki NVX5000</p>
+<p>Control: MAPPS IV</p>
+<p>Description: Mori Seiki NVX5000 4X Mill Post</p>
+<p>Updates/Features:</p>
+<ul>
+<li>Beginning with Mastercam 2018, all post text edits MUST be made with the Control Definition Manager. <strong>Do NOT edit the post text manually.</strong></li>
+</ul>
+
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card-body">
+
+                    <div>
+                        <strong>File Type:</strong> Post
+                    </div>
+                    <div>
+
+                        <strong>Versions:</strong>
+                            <span>2020</span>
+
+                    </div>
+                    <div>
+                        <strong>Products:</strong>
+
+                            <span>Mastercam for SOLIDWORKS</span>
+                            <span>Mill</span>
+                    </div>
+
+                    
+
+                    
+
+                    <div>
+                        <strong>Downloads: </strong> 136
+                    </div>
+                    <div>
+                        <strong>Views: </strong> 35
+                    </div>
+
+
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+        
+
+            <div class="card-footer">
+                <div class="col-xs-12">
+                    <h5>Files available for download:</h5>
+                </div>
+
+                
+                        <div class="col-sm-6">
+                            <a class="btn btn-primary mb-1" href="/parts/895/download">
+                                Mori Seiki NVX5000 4X Mill.mcam-content
+                            </a>
+                        </div>
+
+                
+
+                
+
+
+
+            </div>
+
+        
+
+
+        <div class="card-footer">
+            <div class="col-xs-9">
+                <p class="small">Uploaded by Don Boire. Last modified on 7/18/2025</p>
+            </div>
+            
+
+        </div>
+
+
+    </div>
+    <div class="card mb-3 ">
+
+        <div class="row g-0">
+
+            <div class="col-md-3">
+                    <img class="img-fluid part-image" src="/images/placeholder.png">
+            </div>
+
+            <div class="col-md-6">
+                <div class="card-body">
+                    <p class="card-text">
+                        <a class="part-link" href="/parts/499">Mori Seiki NMH6300 MSX 5X HMC Mill</a>
+                    </p>
+                    <p class="card-text">
+                        </p><p>Files included in package:</p>
+<ul>
+<li><p>Mori Seiki NMH6300 MSX 5X HMC Mill.MCAM-CONTROL</p>
+</li>
+<li><p>Mori Seiki NMH6300 MSX 5X HMC Mill.MCAM-MMD</p>
+</li>
+<li><p>Mori Seiki NMH6300 MSX 5X HMC Mill MM.MCAM-MMD</p>
+</li>
+<li><p>Mori Seiki NMH6300 MSX 5X HMC Mill.pst</p>
+</li>
+<li><p>Mori Seiki NMH6300 MSX 5X HMC Mill.psb</p>
+</li>
+</ul>
+<p>CNC Post Revision: 22.81</p>
+<p>Machine Name: Mori Seiki NMH6300 DCG</p>
+<p>Control: Mori Seiki MSX-711, MSX-711III</p>
+<p>Description: 5 Axis Horizontal Mill</p>
+<p>Updates/Features:</p>
+<ul>
+<li>Beginning with Mastercam 2018, all post text edits MUST be made with the Control Definition Manager. <strong>Do NOT edit the post text manually.</strong></li>
+</ul>
+
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card-body">
+
+                    <div>
+                        <strong>File Type:</strong> Post
+                    </div>
+                    <div>
+
+                        <strong>Versions:</strong>
+                            <span>2020</span>
+
+                    </div>
+                    <div>
+                        <strong>Products:</strong>
+
+                            <span>Mastercam for SOLIDWORKS</span>
+                            <span>Mill</span>
+                            <span>Multiaxis</span>
+                    </div>
+
+                    
+
+                    
+
+                    <div>
+                        <strong>Downloads: </strong> 208
+                    </div>
+                    <div>
+                        <strong>Views: </strong> 99
+                    </div>
+
+
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+        
+
+            <div class="card-footer">
+                <div class="col-xs-12">
+                    <h5>Files available for download:</h5>
+                </div>
+
+                
+                        <div class="col-sm-6">
+                            <a class="btn btn-primary mb-1" href="/parts/1312/download">
+                                Mori Seiki NMH6300 MSX 5X HMC Mill.mcam-content
+                            </a>
+                        </div>
+
+                
+
+                
+
+
+
+            </div>
+
+        
+
+
+        <div class="card-footer">
+            <div class="col-xs-9">
+                <p class="small">Uploaded by Don Boire. Last modified on 7/18/2025</p>
+            </div>
+            
+
+        </div>
+
+
+    </div>
+    <div class="card mb-3 ">
+
+        <div class="row g-0">
+
+            <div class="col-md-3">
+                    <img class="img-fluid part-image" src="/images/placeholder.png">
+            </div>
+
+            <div class="col-md-6">
+                <div class="card-body">
+                    <p class="card-text">
+                        <a class="part-link" href="/parts/347">Mori Seiki NMH6300 MSX 5X HMC Mill</a>
+                    </p>
+                    <p class="card-text">
+                        </p><p>Files included in package:</p>
+<ul>
+<li><p>MORI SEIKI NMH6300 MSX 5X HMC Mill MM.mcam-mmd</p>
+</li>
+<li><p>Mori Seiki NMH6300 MSX 5X HMC Mill.mcam-control</p>
+</li>
+<li><p>MORI SEIKI NMH6300 MSX 5X HMC Mill.mcam-mmd</p>
+</li>
+<li><p>Mori Seiki NMH6300 MSX 5X HMC Mill.psb</p>
+</li>
+<li><p>Mori Seiki NMH6300 MSX 5X HMC Mill.pst</p>
+</li>
+</ul>
+<p>CNC Post Revision: 81</p>
+<p>Machine Name: Mori Seiki NMH6300 DCG</p>
+<p>Control: Mori Seiki MSX-711, MSX-711III</p>
+<p>Description: 5 Axis Horizontal Mill</p>
+<p>Updates/Features:</p>
+<ul>
+<li>Beginning with Mastercam 2018, all post text edits MUST be made with the Control Definition Manager. <strong>Do NOT edit the post text manually.</strong></li>
+</ul>
+<p>For Mastercam 2018, only ANSI text is supported. The UTF-8 tag is still required in 2018 and should not be changed.</p>
+
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card-body">
+
+                    <div>
+                        <strong>File Type:</strong> Post
+                    </div>
+                    <div>
+
+                        <strong>Versions:</strong>
+                            <span>2018</span>
+
+                    </div>
+                    <div>
+                        <strong>Products:</strong>
+
+                            <span>Mastercam for SOLIDWORKS</span>
+                            <span>Mill</span>
+                            <span>Multiaxis</span>
+                    </div>
+
+                    
+
+                    
+
+                    <div>
+                        <strong>Downloads: </strong> 161
+                    </div>
+                    <div>
+                        <strong>Views: </strong> 85
+                    </div>
+
+
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+        
+
+            <div class="card-footer">
+                <div class="col-xs-12">
+                    <h5>Files available for download:</h5>
+                </div>
+
+                
+                        <div class="col-sm-6">
+                            <a class="btn btn-primary mb-1" href="/parts/717/download">
+                                Mori Seiki NMH6300 MSX 5X HMC Mill [V2018].ZIP
+                            </a>
+                        </div>
+
+                
+
+                
+
+
+
+            </div>
+
+        
+
+
+        <div class="card-footer">
+            <div class="col-xs-9">
+                <p class="small">Uploaded by David Eno. Last modified on 7/18/2025</p>
+            </div>
+            
+
+        </div>
+
+
+    </div>
+    <div class="card mb-3 ">
+
+        <div class="row g-0">
+
+            <div class="col-md-3">
+                    <img class="img-fluid part-image" src="/images/placeholder.png">
+            </div>
+
+            <div class="col-md-6">
+                <div class="card-body">
+                    <p class="card-text">
+                        <a class="part-link" href="/parts/246">Mori_Seiki_NV5000 Fanuc18I 4X Mill</a>
+                    </p>
+                    <p class="card-text">
+                        </p><p>Files included in package:</p>
+<ul>
+<li><p>MORI_SEIKI_NV5000 FANUC18I 4X MILL MM.mcam-mmd</p>
+</li>
+<li><p>MORI_SEIKI_NV5000 FANUC18I 4X MILL.mcam-control</p>
+</li>
+<li><p>MORI_SEIKI_NV5000 FANUC18I 4X MILL.mcam-mmd</p>
+</li>
+<li><p>Mori_Seiki_NV5000 Fanuc18I 4X Mill.pst</p>
+</li>
+</ul>
+<p>CNC Post Revision: 21.80</p>
+<p>Machine Name: Mori Seiki NV-5000</p>
+<p>Control: Fanuc - MSG501 (Fanuc 18i)</p>
+<p>Description: Mori NV-5000 Vertical Mill</p>
+<p>Updates/Features:</p>
+<ul>
+<li>Beginning with Mastercam 2018, all post text edits MUST be made with the Control Definition Manager. <strong>Do NOT edit the post text manually.</strong></li>
+</ul>
+
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card-body">
+
+                    <div>
+                        <strong>File Type:</strong> Post
+                    </div>
+                    <div>
+
+                        <strong>Versions:</strong>
+                            <span>2019</span>
+
+                    </div>
+                    <div>
+                        <strong>Products:</strong>
+
+                            <span>Mastercam for SOLIDWORKS</span>
+                            <span>Mill</span>
+                    </div>
+
+                    
+
+                    
+
+                    <div>
+                        <strong>Downloads: </strong> 143
+                    </div>
+                    <div>
+                        <strong>Views: </strong> 51
+                    </div>
+
+
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+        
+
+            <div class="card-footer">
+                <div class="col-xs-12">
+                    <h5>Files available for download:</h5>
+                </div>
+
+                
+                        <div class="col-sm-6">
+                            <a class="btn btn-primary mb-1" href="/parts/527/download">
+                                Mori_Seiki_NV5000 Fanuc18I 4X Mill [V2019].ZIP
+                            </a>
+                        </div>
+
+                
+
+                
+
+
+
+            </div>
+
+        
+
+
+        <div class="card-footer">
+            <div class="col-xs-9">
+                <p class="small">Uploaded by David Eno. Last modified on 7/18/2025</p>
+            </div>
+            
+
+        </div>
+
+
+    </div>
+    <div class="card mb-3 ">
+
+        <div class="row g-0">
+
+            <div class="col-md-3">
+                    <img class="img-fluid part-image" src="/images/placeholder.png">
+            </div>
+
+            <div class="col-md-6">
+                <div class="card-body">
+                    <p class="card-text">
+                        <a class="part-link" href="/parts/245">Mori Seiki NVX5000 4X Mill</a>
+                    </p>
+                    <p class="card-text">
+                        </p><p>Files included in package:</p>
+<ul>
+<li><p>MORI SEIKI NVX5000 4X MILL MM.mcam-mmd</p>
+</li>
+<li><p>MORI SEIKI NVX5000 4X MILL.mcam-control</p>
+</li>
+<li><p>MORI SEIKI NVX5000 4X MILL.mcam-mmd</p>
+</li>
+<li><p>Mori Seiki NVX5000 4X Mill.pst</p>
+</li>
+</ul>
+<p>CNC Post Revision: 21.80</p>
+<p>Machine Name: Mori Seiki NVX5000</p>
+<p>Control: MAPPS IV</p>
+<p>Description: Mori Seiki NVX5000 4X Mill Post</p>
+<p>Updates/Features:</p>
+<ul>
+<li>Beginning with Mastercam 2018, all post text edits MUST be made with the Control Definition Manager. <strong>Do NOT edit the post text manually.</strong></li>
+</ul>
+
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card-body">
+
+                    <div>
+                        <strong>File Type:</strong> Post
+                    </div>
+                    <div>
+
+                        <strong>Versions:</strong>
+                            <span>2019</span>
+
+                    </div>
+                    <div>
+                        <strong>Products:</strong>
+
+                            <span>Mastercam for SOLIDWORKS</span>
+                            <span>Mill</span>
+                    </div>
+
+                    
+
+                    
+
+                    <div>
+                        <strong>Downloads: </strong> 113
+                    </div>
+                    <div>
+                        <strong>Views: </strong> 38
+                    </div>
+
+
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+        
+
+            <div class="card-footer">
+                <div class="col-xs-12">
+                    <h5>Files available for download:</h5>
+                </div>
+
+                
+                        <div class="col-sm-6">
+                            <a class="btn btn-primary mb-1" href="/parts/526/download">
+                                Mori Seiki NVX5000 4X Mill [V2019].ZIP
+                            </a>
+                        </div>
+
+                
+
+                
+
+
+
+            </div>
+
+        
+
+
+        <div class="card-footer">
+            <div class="col-xs-9">
+                <p class="small">Uploaded by David Eno. Last modified on 7/18/2025</p>
+            </div>
+            
+
+        </div>
+
+
+    </div>
+    <div class="card mb-3 ">
+
+        <div class="row g-0">
+
+            <div class="col-md-3">
+                    <img class="img-fluid part-image" src="/images/placeholder.png">
+            </div>
+
+            <div class="col-md-6">
+                <div class="card-body">
+                    <p class="card-text">
+                        <a class="part-link" href="/parts/244">Mori Seiki NMH6300 MSX 5X HMC Mill</a>
+                    </p>
+                    <p class="card-text">
+                        </p><p>Files included in package:</p>
+<ul>
+<li><p>MORI SEIKI NMH6300 MSX 5X HMC Mill MM.mcam-mmd</p>
+</li>
+<li><p>Mori Seiki NMH6300 MSX 5X HMC Mill.mcam-control</p>
+</li>
+<li><p>MORI SEIKI NMH6300 MSX 5X HMC Mill.mcam-mmd</p>
+</li>
+<li><p>Mori Seiki NMH6300 MSX 5X HMC Mill.psb</p>
+</li>
+<li><p>Mori Seiki NMH6300 MSX 5X HMC Mill.pst</p>
+</li>
+</ul>
+<p>CNC Post Revision: 21.81</p>
+<p>Machine Name: Mori Seiki NMH6300 DCG</p>
+<p>Control: Mori Seiki MSX-711, MSX-711III</p>
+<p>Description: 5 Axis Horizontal Mill</p>
+<p>Updates/Features:</p>
+<ul>
+<li>Beginning with Mastercam 2018, all post text edits MUST be made with the Control Definition Manager. <strong>Do NOT edit the post text manually.</strong></li>
+</ul>
+
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card-body">
+
+                    <div>
+                        <strong>File Type:</strong> Post
+                    </div>
+                    <div>
+
+                        <strong>Versions:</strong>
+                            <span>2019</span>
+
+                    </div>
+                    <div>
+                        <strong>Products:</strong>
+
+                            <span>Mastercam for SOLIDWORKS</span>
+                            <span>Mill</span>
+                            <span>Multiaxis</span>
+                    </div>
+
+                    
+
+                    
+
+                    <div>
+                        <strong>Downloads: </strong> 161
+                    </div>
+                    <div>
+                        <strong>Views: </strong> 71
+                    </div>
+
+
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+        
+
+            <div class="card-footer">
+                <div class="col-xs-12">
+                    <h5>Files available for download:</h5>
+                </div>
+
+                
+                        <div class="col-sm-6">
+                            <a class="btn btn-primary mb-1" href="/parts/1327/download">
+                                Mori Seiki NMH6300 MSX 5X HMC Mill [V2019].zip
+                            </a>
+                        </div>
+
+                
+
+                
+
+
+
+            </div>
+
+        
+
+
+        <div class="card-footer">
+            <div class="col-xs-9">
+                <p class="small">Uploaded by David Eno. Last modified on 7/18/2025</p>
+            </div>
+            
+
+        </div>
+
+
+    </div>
+
+
+
+<div class="col d-flex justify-content-end">
+    <ul class="pagination">
+        <li class="page-item disabled">
+            <a class="page-link" href="/?keywords=mori&amp;partType=3&amp;product=6&amp;sortBy=1&amp;pageSize=50&amp;currentPage=1"><i class="fas fa-fast-backward"></i></a>
+        </li>
+
+        <li class="page-item disabled">
+            <a class="page-link" href="/?keywords=mori&amp;partType=3&amp;product=6&amp;sortBy=1&amp;pageSize=50&amp;currentPage=0"><i class="fas fa-step-backward"></i></a>
+        </li>
+
+            <li class="page-item active">
+                <a class="page-link" href="/?keywords=mori&amp;partType=3&amp;product=6&amp;sortBy=1&amp;pageSize=50&amp;currentPage=1">1</a>
+            </li>
+
+        <li class="page-item  disabled">
+            <a class="page-link" href="/?keywords=mori&amp;partType=3&amp;product=6&amp;sortBy=1&amp;pageSize=50&amp;currentPage=2"><i class="fas fa-step-forward"></i></a>
+        </li>
+
+        <li class="page-item  disabled">
+            <a class="page-link" href="/?keywords=mori&amp;partType=3&amp;product=6&amp;sortBy=1&amp;pageSize=50&amp;currentPage=1"><i class="fas fa-fast-forward"></i></a>
+        </li>
+    </ul>
+
+</div>
+
+
+
+
+
+            </main>
+        </div>
+    </div>
+
+    
+        <div class="container">
+        By using this website you are agreeing to the Terms of Use set forth by CNC Software, LLC Please review the terms and understand the risk associated with downloading and using files to control a CNC Machine.
+        </div>
+
+
+    <footer class="site-footer">
+    <div class="inner">
+        <div class="footer-row">
+            <div class="footer-col-60">
+                <a href="https://my.mastercam.com">
+                    <img src="/_content/MastercamUI/images/brand_banner.png" alt="Mastercam Logo">
+                </a>
+                <ul class="footer-social">
+                    <li>
+                        <a href="https://www.facebook.com/Mastercam" rel="noopener noreferrer">
+                            <svg class="svg-inline--fa fa-facebook" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
+                                <path fill="currentColor" d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256h0z">
+                                </path>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/mastercam/" rel="noopener noreferrer">
+                            <svg class="svg-inline--fa fa-instagram" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="instagram" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="">
+                                <path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z">
+                                </path>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/mastercam" rel="noopener noreferrer">
+                            <svg class="svg-inline--fa fa-x-twitter" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="x-twitter" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
+                                <path fill="currentColor" d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z">
+                                </path>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/company/mastercam/" rel="noopener noreferrer">
+                            <svg class="svg-inline--fa fa-linkedin" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="">
+                                <path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z">
+                                </path>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/channel/UChJt5ruSkqnmFH44WsXVZLw" rel="noopener noreferrer">
+                            <svg class="svg-inline--fa fa-youtube" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="youtube" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg="">
+                                <path fill="currentColor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z">
+                                </path>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-col-40">
+                <ul class="footer-list">
+                    <li><a href="https://www.mastercam.com/about/about-us/">About Us</a></li>
+                    <li><a href="https://www.mastercam.com/contact-us/">Contact Us</a></li>
+                    <li><a href="https://www.mastercam.com/how-to-buy/">How to Buy</a></li>
+                    <li><a href="https://www.mastercam.com/about/careers/">Careers</a></li>
+                    <li>
+                        <a href="https://www.mastercam.com/support/technical-support/system-requirements/">
+                            System
+                            Requirements
+                        </a>
+                    </li>
+                    <li><a href="https://www.mastercam.com/privacy/">Privacy</a></li>
+                    <li><a href="https://my.mastercam.com/piracy/">Piracy</a></li>
+                    <li><a href="https://www.mastercam.com/en-us/Privacy-Policy">Privacy Statement</a></li>
+                    <li><a href="https://www.mastercam.com/privacy/terms-of-use">Terms of Use</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <hr class="full-bleed-hr">
+    <div class="inner">
+        <div class="copyright">© 2026 Mastercam All Rights Reserved.</div>
+    </div>
+</footer>
+
+
+    <script src="/_content/MastercamUI/lib/jquery/jquery.min.js"></script>
+    <script src="/_content/MastercamUI/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    
+    
+
+
+    
+
+    <script type="text/javascript" src="/lib/select2/js/select2.min.js"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(() => {
+
+            $('#tagPicker').select2( {
+                theme: "bootstrap-5",
+                width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+                placeholder: $( this ).data( 'placeholder' ),
+                closeOnSelect: false,
+                selectionCssClass: "select2--small",
+                //dropdownCssClass: "select2--small" -- this doesn't seem to be working even tho is in the docs like this.
+            });
+
+            // URLSearchParams is case-sensitive but ASP.NET's query collection is not, so a key we
+            // write in one casing sits alongside the same key in another casing and both get bound
+            // as a single comma-joined value. Drop every casing variant before writing ours. These
+            // names have to stay in sync with Selections.ToDictionary(), which builds the
+            // pagination links.
+            const dropParam = (url, pattern) =>
+            {
+                [...url.searchParams.keys()]
+                    .filter(key => pattern.test(key))
+                    .forEach(key => url.searchParams.delete(key));
+            };
+
+            const setParam = (url, name, value) =>
+            {
+                dropParam(url, new RegExp('^' + name + '$', 'i'));
+
+                if (value !== null && value !== undefined && value !== '')
+                {
+                    url.searchParams.set(name, value);
+                }
+            };
+
+            // '-1' is the "Any" option on every picker, which means no filter at all.
+            const pickerValue = (selector) =>
+            {
+                const value = $(selector).val();
+
+                return value === '-1' ? null : value;
+            };
+
+            $('#searchForm').submit((e) => {
+
+                e.preventDefault();
+
+                // Create a URL object from the current location
+                var url = new URL(window.location.href);
+
+                setParam(url, 'partType', pickerValue('#partTypePicker'));
+                setParam(url, 'version', pickerValue('#versionPicker'));
+                setParam(url, 'units', pickerValue('#unitPicker'));
+                setParam(url, 'product', pickerValue('#productPicker'));
+                setParam(url, 'industry', pickerValue('#industryPicker'));
+                setParam(url, 'sortBy', pickerValue('#sortPicker'));
+                setParam(url, 'pageSize', pickerValue('#pageSizePicker'));
+                setParam(url, 'keywords', $('#keywordInput').val());
+
+                // Tags are indexed - tags[0], tags[1] - so clear the whole set before rewriting it.
+                dropParam(url, /^tags(\[\d+\])?$/i);
+
+                [].concat($('#tagPicker').val() ?? [])
+                    .filter(tag => tag !== '' && tag !== '-1')
+                    .forEach((tag, index) => url.searchParams.set('tags[' + index + ']', tag));
+
+                // A new search starts over at the first page.
+                dropParam(url, /^currentPage$/i);
+
+                // Navigate to the new URL
+                window.location.href = url.toString();
+            });
+
+            $('#clearSearchButton').click((e) => {
+
+                e.preventDefault();
+
+                $('#partTypePicker').val(''); // Reset the part type picker to default value
+                $('#versionPicker').val(''); // Reset the version picker to default value
+                $('#unitPicker').val(''); // Reset the unit picker to default value
+                $('#productPicker').val(''); // Reset the product picker to default value
+                $('#industryPicker').val(''); // Reset the industry picker to default value
+                $('#sortPicker').val(''); // Reset the sort picker to default value
+                $('#pageSizePicker').val(''); // Reset the page size picker to default value
+                $('#keywordInput').val(''); // Reset the keyword input to default value
+                $('#tagPicker').val(''); // Reset the tag picker to default value
+
+                var currentRef = window.location.href.split('?')[0]
+            
+                window.location.href = currentRef;
+            });
+
+        });
+
+    </script>
+
+
+</body></html>
