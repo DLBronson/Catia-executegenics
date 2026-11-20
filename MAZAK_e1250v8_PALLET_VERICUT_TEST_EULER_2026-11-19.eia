@@ -1,9 +1,4 @@
-https://github.com/DLBronson/nc-proving-ground/tree/main/machines/mazak-integrex-e1250v/2026-11-19_WITH_TURNING
-
-MAZAK_e1250v8_PALLET with turning DEBUG.log
-
-MAZAK_e1250v8_PALLET with turning.log
-
-MAZAK_e1250v8_PALLET_TEST_WITH_TURNING.eia
-
-vericut_status.txt
+M202 NullMacro = no turning-mode switch
+M200 NullMacro = no C-axis mode switch
+M110 IgnoreMacro = no simulated milling-spindle clamp
+M111 IgnoreMacro = no simulated spindle release
