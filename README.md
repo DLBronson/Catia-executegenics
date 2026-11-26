@@ -1,27 +1,399 @@
-For your Mastercam Machine Simulation, I'd use straightforward engineering names with underscores. Looking at your model, here's how I'd identify the major components.
-
-| Component in your picture                 | Recommended name         |
-| ----------------------------------------- | ------------------------ |
-| Large circular rotary table (gray)        | Rotary_Worktable         |
-| Green support beneath rotary table        | Rotary_Table_Base        |
-| Large pink stationary milling platform    | Fixed_Milling_Table      |
-| Head storage tower, upper left            | Head_Storage_Station     |
-| Long gray machine bed and rails           | Longitudinal_Machine_Bed |
-| Large green moving structure, right       | Moving_Column            |
-| Red vertical structure supporting the ram | Vertical_Slide           |
-| Operator cabin                            | Operator_Cabin           |
-| Orange horizontal extending component     | Horizontal_Ram           |
-| Silver milling head at end of ram         | Milling_Head             |
-
-### One important terminology correction
-
-That orange component is most likely the ram, not the quill.
-
-A ram is the large structural member that extends and retracts to position the milling head. A quill generally refers to a smaller spindle sleeve that moves independently within a head.
-
-For your simulator, I'd call it `Horizontal_Ram`.
-
-Also, I'd initially name the round table `Rotary_Worktable` rather than assigning B or C to its component name. We can establish its exact axis designation when configuring the kinematic hierarchy.
-
-My suggestion: Keep the machine component names descriptive and use the actual X, Y, Z, A, B, and C designations for the motion axes. That'll make your Machine Simulation tree much easier to understand and troubleshoot.
-
+0 BEGIN PGM OO INCH
+1 ;POSTABILITY PARPAS ELECTRA TMT-121 HEAD MILLING
+2 ;MACHINE GROUP-1
+3 ;MASTERCAM - 2026
+4 ;MCAM FILE - C:\USERS\JOHN.BETTENCOURT\ONEDRIVE - CNC SOFTWARE, LLC\DOCUMENTS\MASTERCAM\MASTERCAM CASES\PRIME MACHINE - MASTERCAM TRAINING\VERICUT_TEST\PRIME MACHINE PART.MCAM
+5 ;POST      - MPPOSTABILITY_PARPAS_ELECTRA_TNC_TMT-121.PST
+6 ;PROGRAM   - OO.NC
+7 ;DATE      - 2026.11.25
+8 ;TIME      - 6:50 PM
+9 ;1   - 2.0 FACE MILL        - D2.0000" - R0.0300"
+10 BLK FORM 0.1 Z X-5.05 Y-5.05 Z+0
+11 BLK FORM 0.2 X+5.9249 Y+5.05 Z+10
+12 CYCL DEF 247 PRESETTING ~
+       Q339=+1    ;DATUM NUMBER
+13 M50
+14 ;HEAD TMT-121 WILL BE USED
+15 M129
+16 M55
+17 Q0 = 1000 ; ROTARY AXIS FEED
+18 CYCL DEF 350 Turn-Mill ~
+       Q1530=+0; 0=Mill 1=Turn ~
+       Q1535=+0; Insert 6 degree mult ~
+       Q1536=+0; 0=Hori 1=Vert ~
+       Q1537=+0; 0=No 1=Yes
+19 L Z-.5906 R0 F MAX M91
+20 L Y+80 R0 F MAX M91
+21 M145 M129
+22 PLANE RESET STAY
+23 L A+0 C+0 R0 FQ0 M91
+24 ;
+25 * - TOP
+26 ;OPERATION NO - 1
+27 ;AXIS COMBINATION - 2
+28 * - 2.0 FACE MILL
+29 TOOL CALL 1 Z S250 F1000
+30 ;Tool Cycle Time - 02:13:14
+31 M8
+32 L Z-.5906 R0 F MAX M91
+33 L Y+80 R0 F MAX M91
+34 CYCL DEF 32.0 TOLERANCE
+35 CYCL DEF 32.1 T0.0012
+36 CYCL DEF 32.2 HSC-MODE:0
+37 L F MAX
+38 M138 A C
+39 PLANE SPATIAL SPA-90 SPB+0 SPC+0 STAY
+40 L A+Q120 R0 F MAX
+41 L C+Q122 R0 F MAX
+42 M65
+43 M66
+44 L Z+14 F MAX M03
+45 L X-7.2 Y+4.9999 F MAX
+46 L Z+10.1 F MAX
+47 M137
+48 L Z+10 F250
+49 L X+6.2 F13
+50 CC X+6.2 Y+4.5454
+51 C Y+4.0908 DR-
+52 L X-6.2
+53 CC X-6.2 Y+3.6363
+54 C Y+3.1818 DR+
+55 L X+6.2
+56 CC X+6.2 Y+2.7272
+57 C Y+2.2727 DR-
+58 L X-6.2
+59 CC X-6.2 Y+1.8181
+60 C Y+1.3636 DR+
+61 L X+6.2
+62 CC X+6.2 Y+.9091
+63 C Y+.4545 DR-
+64 L X-6.2
+65 CC X-6.2 Y+0
+66 C Y-.4545 DR+
+67 L X+6.2
+68 CC X+6.2 Y-.9091
+69 C Y-1.3636 DR-
+70 L X-6.2
+71 CC X-6.2 Y-1.8181
+72 C Y-2.2727 DR+
+73 L X+6.2
+74 CC X+6.2 Y-2.7272
+75 C Y-3.1818 DR-
+76 L X-6.2
+77 CC X-6.2 Y-3.6363
+78 C Y-4.0908 DR+
+79 L X+6.2
+80 CC X+6.2 Y-4.5454
+81 C Y-4.9999 DR-
+82 L X-7.2
+83 L Z+14 F MAX
+84 CYCL DEF 32.0 TOLERANCE
+85 CYCL DEF 32.1
+86 M129
+87 M09
+88 M05
+89 PLANE RESET STAY
+90 L Z-.5906 R0 F MAX M91
+91 L Y+80 R0 F MAX M91
+92 M1
+93 ;
+94 * - LEFT
+95 ;OPERATION NO - 2
+96 ;AXIS COMBINATION - 2
+97 * - 2.0 FACE MILL
+98 TOOL CALL 1 Z S250 F1000
+31 ;Tool Cycle Time - 02:13:15
+32 M8
+33 L Z-.5906 R0 F MAX M91
+34 L Y+80 R0 F MAX M91
+35 CYCL DEF 32.0 TOLERANCE
+36 CYCL DEF 32.1 T0.0012
+37 CYCL DEF 32.2 HSC-MODE:0
+38 M55
+39 M56
+40 L F MAX
+41 M138 A C
+42 PLANE SPATIAL SPA-90 SPB+0 SPC-270 STAY
+43 L A+Q120 R0 F MAX
+44 L C+Q122 R0 F MAX
+45 M65
+46 M66
+47 L Z+14 F MAX M03
+48 L X+9.9999 Y+7.2 F MAX
+49 L Z+5.1 F MAX
+50 M137
+51 L Z+5 F250
+52 L Y-6.2 F13
+53 CC X+9.5454 Y-6.2
+54 C X+9.0908 DR-
+55 L Y+6.2
+56 CC X+8.6363 Y+6.2
+57 C X+8.1818 DR+
+58 L Y-6.2
+59 CC X+7.7272 Y-6.2
+60 C X+7.2727 DR-
+61 L Y+6.2
+62 CC X+6.8181 Y+6.2
+63 C X+6.3636 DR+
+64 L Y-6.2
+65 CC X+5.9091 Y-6.2
+66 C X+5.4545 DR-
+67 L Y+6.2
+68 CC X+5 Y+6.2
+69 C X+4.5455 DR+
+70 L Y-6.2
+71 CC X+4.0909 Y-6.2
+72 C X+3.6364 DR-
+73 L Y+6.2
+74 CC X+3.1819 Y+6.2
+75 C X+2.7273 DR+
+76 L Y-6.2
+77 CC X+2.2728 Y-6.2
+78 C X+1.8182 DR-
+79 L Y+6.2
+80 CC X+1.3637 Y+6.2
+81 C X+.9092 DR+
+82 L Y-6.2
+83 CC X+.4546 Y-6.2
+84 C X+.0001 DR-
+85 L Y+7.2
+86 L Z+14 F MAX
+87 CYCL DEF 32.0 TOLERANCE
+88 CYCL DEF 32.1
+89 M129
+90 M09
+91 M05
+92 PLANE RESET STAY
+93 L Z-.5906 R0 F MAX M91
+94 L Y+80 R0 F MAX M91
+95 M1
+96 ;
+97 * - FRONT
+98 ;OPERATION NO - 3
+99 ;AXIS COMBINATION - 2
+100 * - 2.0 FACE MILL
+101 TOOL CALL 1 Z S250 F1000
+32 ;Tool Cycle Time - 02:17:52
+33 M8
+34 L Z-.5906 R0 F MAX M91
+35 L Y+80 R0 F MAX M91
+36 CYCL DEF 32.0 TOLERANCE
+37 CYCL DEF 32.1 T0.0012
+38 CYCL DEF 32.2 HSC-MODE:0
+39 M55
+40 M56
+41 L F MAX
+42 M138 A C
+43 PLANE SPATIAL SPA+0 SPB+0 SPC+0 STAY
+44 L A+Q120 R0 F MAX
+45 L C+Q122 R0 F MAX
+46 M65
+47 M66
+48 L X-7.2 Y+9.9999 F MAX M03
+49 L Z+14 F MAX
+50 L Z+5.1 F MAX
+51 M137
+52 L Z+5 F250
+53 L X+6.2046 F13
+54 L X+6.2841
+55 CC X+6.2841 Y+9.5454
+56 C Y+9.0908 DR-
+57 L X-6.2
+58 CC X-6.2 Y+8.6363
+59 C Y+8.1818 DR+
+60 L X+6.3637
+61 L X+6.4432
+62 CC X+6.4432 Y+7.7272
+63 C Y+7.2727 DR-
+64 L X-6.2
+65 CC X-6.2 Y+6.8181
+66 C Y+6.3636 DR+
+67 L X+6.5227
+68 L X+6.6023
+69 CC X+6.6023 Y+5.9091
+70 C Y+5.4545 DR-
+71 L X-6.2
+72 CC X-6.2 Y+5
+73 C Y+4.5455 DR+
+74 L X+6.6818
+75 L X+6.7613
+76 CC X+6.7613 Y+4.0909
+77 C Y+3.6364 DR-
+78 L X-6.2
+79 CC X-6.2 Y+3.1819
+80 C Y+2.7273 DR+
+81 L X+6.8409
+82 L X+6.9204
+83 CC X+6.9204 Y+2.2728
+84 C Y+1.8182 DR-
+85 L X-6.2
+86 CC X-6.2 Y+1.3637
+87 C Y+.9092 DR+
+88 L X+6.9999
+89 L X+7.0795
+90 CC X+7.0795 Y+.4546
+91 C Y+.0001 DR-
+92 L X-7.2
+93 L Z+14 F MAX
+94 CYCL DEF 32.0 TOLERANCE
+95 CYCL DEF 32.1
+96 M129
+97 M09
+98 M05
+99 PLANE RESET STAY
+100 L Z-.5906 R0 F MAX M91
+101 L Y+80 R0 F MAX M91
+102 M1
+103 ;
+104 * - DRAFT FACE
+105 ;OPERATION NO - 4
+106 ;AXIS COMBINATION - 2
+107 * - 2.0 FACE MILL
+108 TOOL CALL 1 Z S250 F1000
+33 ;Tool Cycle Time - 02:13:17
+34 M8
+35 L Z-.5906 R0 F MAX M91
+36 L Y+80 R0 F MAX M91
+37 CYCL DEF 32.0 TOLERANCE
+38 CYCL DEF 32.1 T0.0012
+39 CYCL DEF 32.2 HSC-MODE:0
+40 M55
+41 M56
+42 L F MAX
+43 M138 A C
+44 PLANE SPATIAL SPA-90 SPB+0 SPC-85 STAY
+45 L A+Q120 R0 F MAX
+46 L C+Q122 R0 F MAX
+47 M65
+48 M66
+49 L Z+14 F MAX M03
+50 L X-9.5261 Y-7.2 F MAX
+51 L Z+5.9525 F MAX
+52 M137
+53 L Z+5.8525 F250
+54 L Y+6.2 F13
+55 CC X-9.0698 Y+6.2
+56 C X-8.6135 DR-
+57 L Y-6.2
+58 CC X-8.1573 Y-6.2
+59 C X-7.701 DR+
+60 L Y+6.2
+61 CC X-7.2447 Y+6.2
+62 C X-6.7884 DR-
+63 L Y-6.2
+64 CC X-6.3322 Y-6.2
+65 C X-5.8759 DR+
+66 L Y+6.2
+67 CC X-5.4196 Y+6.2
+68 C X-4.9633 DR-
+69 L Y-6.2
+70 CC X-4.5071 Y-6.2
+71 C X-4.0508 DR+
+72 L Y+6.2
+73 CC X-3.5945 Y+6.2
+74 C X-3.1383 DR-
+75 L Y-6.2
+76 CC X-2.682 Y-6.2
+77 C X-2.2257 DR+
+78 L Y+6.2
+79 CC X-1.7694 Y+6.2
+80 C X-1.3132 DR-
+81 L Y-6.2
+82 CC X-.8569 Y-6.2
+83 C X-.4006 DR+
+84 L Y+6.2
+85 CC X+.0557 Y+6.2
+86 C X+.5119 DR-
+87 L Y-7.2
+88 L Z+14 F MAX
+89 CYCL DEF 32.0 TOLERANCE
+90 CYCL DEF 32.1
+91 M129
+92 M09
+93 M05
+94 PLANE RESET STAY
+95 L Z-.5906 R0 F MAX M91
+96 L Y+80 R0 F MAX M91
+97 M1
+98 ;
+99 ;WARNING - TILT LIMITS EXCEEDED - CANCEL TO EXIT
+100 * - BACK
+101 ;OPERATION NO - 5
+102 ;AXIS COMBINATION - 2
+103 * - 2.0 FACE MILL
+104 TOOL CALL 1 Z S250 F1000
+34 ;Tool Cycle Time - 02:17:48
+35 M8
+36 L Z-.5906 R0 F MAX M91
+37 L Y+80 R0 F MAX M91
+38 CYCL DEF 32.0 TOLERANCE
+39 CYCL DEF 32.1 T0.0012
+40 CYCL DEF 32.2 HSC-MODE:0
+41 M55
+42 M56
+43 L F MAX
+44 M138 A C
+45 PLANE SPATIAL SPA-180 SPB+0 SPC+0 STAY
+46 L A+Q120 R0 F MAX
+47 L C+Q122 R0 F MAX
+48 M65
+49 M66
+50 L Z+14 F MAX M03
+51 L X+7.2046 Y-9.9999 F MAX
+52 L Z+5.1 F MAX
+53 M137
+54 L Z+5 F250
+55 L X-6.2 F13
+56 CC X-6.2 Y-9.5454
+57 C Y-9.0908 DR-
+58 L X+6.2841
+59 L X+6.3637
+60 CC X+6.3637 Y-8.6363
+61 C Y-8.1818 DR+
+62 L X-6.2
+63 CC X-6.2 Y-7.7272
+64 C Y-7.2727 DR-
+65 L X+6.4432
+66 L X+6.5227
+67 CC X+6.5227 Y-6.8181
+68 C Y-6.3636 DR+
+69 L X-6.2
+70 CC X-6.2 Y-5.9091
+71 C Y-5.4545 DR-
+72 L X+6.6023
+73 L X+6.6818
+74 CC X+6.6818 Y-5
+75 C Y-4.5455 DR+
+76 L X-6.2
+77 CC X-6.2 Y-4.0909
+78 C Y-3.6364 DR-
+79 L X+6.7613
+80 L X+6.8409
+81 CC X+6.8409 Y-3.1819
+82 C Y-2.7273 DR+
+83 L X-6.2
+84 CC X-6.2 Y-2.2728
+85 C Y-1.8182 DR-
+86 L X+6.9204
+87 L X+6.9999
+88 CC X+6.9999 Y-1.3637
+89 C Y-.9092 DR+
+90 L X-6.2
+91 CC X-6.2 Y-.4546
+92 C Y-.0001 DR-
+93 L X+8.0795
+94 L Z+14 F MAX
+95 CYCL DEF 32.0 TOLERANCE
+96 CYCL DEF 32.1
+97 M129
+98 M09
+99 M05
+100 PLANE RESET STAY
+101 L Z-.5906 R0 F MAX M91
+102 L Y+80 R0 F MAX M91
+103 M145 M129
+104 L A+0 C+0 R0 FQ0 M91
+105 M65
+106 M66
+99998 M30
+100 END PGM OO INCH
