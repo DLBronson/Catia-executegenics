@@ -1,0 +1,124 @@
+Attribute VB_Name = "AUTOMATIC_SHOTS"
+Sub CATMain()
+'###############################
+'
+'#            02-23-2020                           #
+'##############################
+
+	Dim myAnnotationSets As AnnotationSets
+	Dim myAnnotationSet As AnnotationSet
+	Dim myAnnotations As Annotations
+	Dim myAnnotation As Annotation
+	Dim mySelection As Selection
+	Dim visProperties1 As INFITF.VisPropertySet
+'Dim myPart As CATIADocument ' AnyObject 'unused JB
+'Dim myPath As String 'unused JB
+
+
+	Set myPart = CATIA.ActiveDocument
+	Set myProductDocument = CATIA.ActiveDocument
+	Set myProduct = myProductDocument.Product
+' Set Selection to ActiveDocument
+	Set mySelection = CATIA.ActiveDocument.Selection
+	Set myAnnotationSets = myProductDocument.Product.GetTechnologicalObject("CATAnnotationSets")
+' Annotations back/turn to Black
+	For iSetCnt = 1 To myAnnotationSets.Count
+		Set myAnnotationSet = myAnnotationSets.Item(iSetCnt)
+		Set myAnnotations = myAnnotationSet.Annotations
+		For iAnnoCnt = 1 To myAnnotations.Count
+			Set myAnnotation = myAnnotations.Item(iAnnoCnt)
+			If Not myAnnotation Is Nothing Then
+				With mySelection
+					.Clear
+					.Add myAnnotation
+					Call .VisProperties.SetVisibleColor(0, 0, 12, 0)
+				End With
+				myAnnotation.ModifyVisu
+			End If
+		Next
+	Next
+	Dim myCaptures As Captures
+	Set myAnnotationSet = myAnnotationSets.Item(1)
+	Set myCaptures = myAnnotationSet.Captures
+
+	Dim iCapture As Integer, iCnt As Integer
+	Dim myColor(2)
+	Dim myWhiteColor(2)
+	Dim MyViewer 'As Viewer
+	Dim myWin As SpecsAndGeomWindow
+	Dim myHeight As Long, myWidth As Long
+
+	Set MyViewer = CATIA.ActiveWindow.ActiveViewer
+	Set myWin = CATIA.ActiveWindow
+' myWin.Layout = catWindowGeomOnly 'Uncomment to hide the tree
+	MyViewer.GetBackgroundColor myColor
+	CATIA.StartCommand ("CompassDisplayOff")
+' Change Pcture Frame Size
+	myHeight = myWin.Height
+	myWidth = myWin.Width
+	myWin.Height = 1080
+	myWin.Width = 1920
+' White Background
+	myWhiteColor(0) = 1
+	myWhiteColor(1) = 1
+	myWhiteColor(2) = 1
+	MyViewer.PutBackgroundColor myWhiteColor
+	Dim sCaptureName As String   ' Capture Name and name the shots
+MsgBox "Capture count = "& myCaptures.Count &"  "& myPath & sPartNo & "" 'Uncomment to flag and see the macro flow
+	For iCapture = 1 To myCaptures.Count
+		Dim myCapture As Capture
+		Set myCapture = myCaptures.Item(iCapture)
+		sCaptureName = myCapture.Name
+		CATIA.StatusBar = "Processing Capture '" & myCapture.Name & "'"
+'-----------------Open the Capture-------------------
+		myCapture.DisplayCapture
+
+'-----------------Save JPG File----------------------
+		Dim partDoc As PartDocument
+		Set partDoc = CATIA.ActiveDocument
+
+		Dim partProd As Product
+		Set partProd = partDoc.Product
+
+		Dim filename As String
+		filename = CATIA.ActiveDocument.Name
+
+		Dim path As String
+		path = CATIA.ActiveDocument.Path
+
+		sSaveAs = path & "\" & "EXTRACTED DATA" & "\" & partProd.PartNumber & " " & sCaptureName & ".jpg"
+
+
+'sSaveAs = path & name & " " & sCaptureName & ".jpg"
+'MsgBox "Capture name = " & sSaveAs 'Uncomment to flag and see the macro flow
+		MyViewer.CaptureToFile catCaptureFormatJPEG, sSaveAs
+
+' ' msgbox myPart.Path 'Full Path 'Uncomment to flag and see the macro flow
+'    ' msgbox myPart.Name 'File Name 'Uncomment to flag and see the macro flow
+'     myPath = myPart.path 'Uncomment to flag and see the macro flow
+'-----------------End Save JPG File----------------------
+	Next
+' Now Lets Set Everything Back to how it was
+	MyViewer.Update
+	MyViewer.PutBackgroundColor myColor
+	myWin.Layout = catWindowSpecsAndGeom
+	myWin.Height = myHeight
+	myWin.Width = myWidth
+' Annotations back to White
+	For iSetCnt = 1 To myAnnotationSets.Count
+		Set myAnnotationSet = myAnnotationSets.Item(iSetCnt)
+		Set myAnnotations = myAnnotationSet.Annotations
+		For iAnnoCnt = 1 To myAnnotations.Count
+			Set myAnnotation = myAnnotations.Item(iAnnoCnt)
+			If Not myAnnotation Is Nothing Then
+				With mySelection
+					.Clear
+					.Add myAnnotation
+					Call .VisProperties.SetVisibleColor(255, 255, 255, 0)
+				End With
+				myAnnotation.ModifyVisu
+			End If
+		Next
+	Next
+
+End Sub
